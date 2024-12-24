@@ -172,3 +172,6 @@ cython_debug/
 
 # directory folder
 .directory
+
+# VSCode
+.vscode
