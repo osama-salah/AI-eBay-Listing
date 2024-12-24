@@ -4,13 +4,13 @@ from urllib.parse import unquote
 from page_template import header, footer
 from listing_creator import create_listing_form
 from eBay import EbayAuth
-from lib.session import save_session_state, load_session_state
+from lib.session import save_session_state, load_session_state, logout
 
 # Load state
 load_session_state()
 
 # Set the page configuration
-st.set_page_config(page_title="Product Insights", page_icon=":mag:", layout="centered")
+st.set_page_config(page_title="eBay Listing App", page_icon=":mag:", layout="centered")
 
 # Load CSS styles
 with open('static/css/styles.css') as f:
@@ -52,6 +52,10 @@ header()
 # Display Logged-in if a user token is present
 if ebay_production.user_token:
     st.write(":green[Logged in]")
+
+    # Logout button
+    if st.button("Logout"):
+        logout()
 else:
     st.write(":red[Please log in to access the application.]")
 
@@ -101,7 +105,11 @@ if not ebay_production.user_token:
 # Disable navigation while processing
 with st.sidebar:
     try:
+        print('trying to get page')
         index = ["Home", "Listing Creator"].index(page)
+        st.session_state.page = page
+        save_session_state()
+        print(f'page: {page}')
     except NameError:
         index = 0
     page = st.radio("Navigation", ["Home", "Listing Creator"], disabled=navigation_disabled(), index=index)

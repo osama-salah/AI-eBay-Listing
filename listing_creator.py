@@ -32,7 +32,11 @@ def create_listing_form():
     
     # Display suggestions button
     if st.button("Get Suggestions"):
-        display_suggestions()
+        if st.session_state.title and st.session_state.manufacturer:
+            print(f'title: {title}, manufacturer: {manufacturer}')
+            display_suggestions()
+        else:
+            st.error("Please fill in required fields: Title and Manufacturer")
     elif 'categories' in st.session_state:
         display_suggestions(st.session_state.categories)
     
@@ -54,37 +58,32 @@ def create_listing_form():
     
 def display_suggestions(categories=None):
     if not categories:
-        if 'title' in st.session_state and 'manufacturer' in st.session_state:
-            search_query = f"{st.session_state.title} {st.session_state.manufacturer}".strip()
-            # Retieve eBay production client from session state
-            ebay_production = st.session_state.ebay_production
+        search_query = f"{st.session_state.title} {st.session_state.manufacturer}".strip()
+        # Retieve eBay production client from session state
+        ebay_production = st.session_state.ebay_production
 
-            # Verify ebay_production has a valid user token
-            if not ebay_production.user_token:
-                st.error("User token is not available. Please log in.")
-                print(f'ebay_production.user_token: {ebay_production.user_token}')
-                return
-
-            try:
-                suggestions = ebay_production.get_category_suggestions(search_query)
-            except ValueError as ve:
-                st.error(f"Error: {ve}")
-                return
-            
-            if 'categorySuggestions' in suggestions:
-                categories = [(suggestion['categoryTreeNodeAncestors'][0]['categoryName'], 
-                                suggestion['category']['categoryName']) 
-                            for suggestion in suggestions['categorySuggestions']]
-
-                # Save the categories in session state
-                st.session_state.categories = categories
-
-                # Clear the previous selected category
-                st.session_state.selected_category = None
-
-        else:
-            st.warning("Please enter a title and manufacturer to get suggestions.")
+        # Verify ebay_production has a valid user token
+        if not ebay_production.user_token:
+            st.error("User token is not available. Please log in.")
+            print(f'ebay_production.user_token: {ebay_production.user_token}')
             return
+
+        try:
+            suggestions = ebay_production.get_category_suggestions(search_query)
+        except ValueError as ve:
+            st.error(f"Error: {ve}")
+            return
+        
+        if 'categorySuggestions' in suggestions:
+            categories = [(suggestion['categoryTreeNodeAncestors'][0]['categoryName'], 
+                            suggestion['category']['categoryName']) 
+                        for suggestion in suggestions['categorySuggestions']]
+
+            # Save the categories in session state
+            st.session_state.categories = categories
+
+            # Clear the previous selected category
+            st.session_state.selected_category = None
                         
     selected_category = st.selectbox(
         "Suggested Categories",
