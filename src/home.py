@@ -3,7 +3,7 @@ import webbrowser
 from urllib.parse import unquote
 from page_template import header, footer
 from listing_creator import create_listing_form
-from eBay import EbayAuth
+from eBay import EbayAPI
 from lib.session import save_session_state, load_session_state, logout
 
 # Check if navigation_radio is set in session state
@@ -39,7 +39,7 @@ def navigation_disabled():
 # Initialize eBay client if not already initialized
 if 'ebay_production' not in st.session_state:
     print("Initializing eBay client")
-    ebay_production = EbayAuth(
+    ebay_production = EbayAPI(
         client_id='ArmojanV-OSlistin-PRD-0dc1b488a-cf971abd',
         client_secret='PRD-dc1b488a0a1e-aa29-4c7f-afe7-0447',
         dev_id='296dd38e-bc69-4a03-a77f-57e0a8d03f00',
