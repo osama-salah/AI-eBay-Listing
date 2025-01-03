@@ -1,0 +1,177 @@
+{
+  "categorySuggestions": [
+    {
+      "category": {
+        "categoryId": "117042",
+        "categoryName": "Controllers & Attachments"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "139971",
+        "categoryName": "Video Game Consoles"
+      },
+      "categoryTreeNodeLevel": 2,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "171831",
+        "categoryName": "Bags, Skins & Travel Cases"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "171858",
+        "categoryName": "Chargers & Charging Docks"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "171668",
+        "categoryName": "Faceplates, Decals & Stickers"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "171833",
+        "categoryName": "Replacement Parts & Tools"
+      },
+      "categoryTreeNodeLevel": 2,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "171814",
+        "categoryName": "Cables & Adapters"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "117045",
+        "categoryName": "Memory Cards & Expansion Packs"
+      },
+      "categoryTreeNodeLevel": 3,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "54968",
+          "categoryName": "Video Game Accessories",
+          "categoryTreeNodeLevel": 2,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=54968"
+        },
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    },
+    {
+      "category": {
+        "categoryId": "139973",
+        "categoryName": "Video Games"
+      },
+      "categoryTreeNodeLevel": 2,
+      "categoryTreeNodeAncestors": [
+        {
+          "categoryId": "1249",
+          "categoryName": "Video Games & Consoles",
+          "categoryTreeNodeLevel": 1,
+          "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1249"
+        }
+      ]
+    }
+  ],
+  "categoryTreeId": "0",
+  "categoryTreeVersion": "131"
+}

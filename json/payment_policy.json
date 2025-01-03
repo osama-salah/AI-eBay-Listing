@@ -1,0 +1,16 @@
+{
+  "categoryTypes" : [
+  {
+      "name" : "ALL_EXCLUDING_MOTORS_VEHICLES"
+  }
+  ],
+"description": "Initial Payment Policy",
+"immediatePay": "false",
+"marketplaceId": "EBAY_US",
+"name": "payment_policy"
+}
+
+{
+  "paymentPolicyId": "6207766000",
+  "Sandy": "6207773000"
+}

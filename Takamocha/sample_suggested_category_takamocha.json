@@ -1,0 +1,285 @@
+{
+    "categorySuggestions": [
+      {
+        "category": {
+          "categoryId": "15687",
+          "categoryName": "T-Shirts"
+        },
+        "categoryTreeNodeLevel": 5,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "185100",
+            "categoryName": "Shirts",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=185100"
+          },
+          {
+            "categoryId": "1059",
+            "categoryName": "Men's Clothing",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1059"
+          },
+          {
+            "categoryId": "260012",
+            "categoryName": "Men",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260012"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "234",
+          "categoryName": "Other Games"
+        },
+        "categoryTreeNodeLevel": 3,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "233",
+            "categoryName": "Games",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=233"
+          },
+          {
+            "categoryId": "220",
+            "categoryName": "Toys & Hobbies",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=220"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "4003",
+          "categoryName": "Other Japanese Collectibles"
+        },
+        "categoryTreeNodeLevel": 6,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "29449",
+            "categoryName": "Japanese",
+            "categoryTreeNodeLevel": 5,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=29449"
+          },
+          {
+            "categoryId": "13736",
+            "categoryName": "1900-Now",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=13736"
+          },
+          {
+            "categoryId": "149362",
+            "categoryName": "Asian",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=149362"
+          },
+          {
+            "categoryId": "3913",
+            "categoryName": "Cultures & Ethnicities",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=3913"
+          },
+          {
+            "categoryId": "1",
+            "categoryName": "Collectibles",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "53159",
+          "categoryName": "Tops"
+        },
+        "categoryTreeNodeLevel": 4,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "15724",
+            "categoryName": "Women's Clothing",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=15724"
+          },
+          {
+            "categoryId": "260010",
+            "categoryName": "Women",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260010"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "57990",
+          "categoryName": "Casual Button-Down Shirts"
+        },
+        "categoryTreeNodeLevel": 5,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "185100",
+            "categoryName": "Shirts",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=185100"
+          },
+          {
+            "categoryId": "1059",
+            "categoryName": "Men's Clothing",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=1059"
+          },
+          {
+            "categoryId": "260012",
+            "categoryName": "Men",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260012"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "260966",
+          "categoryName": "Tops, Shirts & T-Shirts"
+        },
+        "categoryTreeNodeLevel": 5,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "11452",
+            "categoryName": "Boys' Clothing (Sizes 4 & Up)",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11452"
+          },
+          {
+            "categoryId": "260013",
+            "categoryName": "Boys",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260013"
+          },
+          {
+            "categoryId": "171146",
+            "categoryName": "Kids",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=171146"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "260031",
+          "categoryName": "Tops & T-Shirts"
+        },
+        "categoryTreeNodeLevel": 4,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "260019",
+            "categoryName": "Baby & Toddler Clothing",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260019"
+          },
+          {
+            "categoryId": "260018",
+            "categoryName": "Baby",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260018"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "155199",
+          "categoryName": "Tops & T-Shirts"
+        },
+        "categoryTreeNodeLevel": 5,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "155198",
+            "categoryName": "Unisex Kids' Clothing (Sizes 4 & Up)",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=155198"
+          },
+          {
+            "categoryId": "260017",
+            "categoryName": "Unisex Kids",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260017"
+          },
+          {
+            "categoryId": "171146",
+            "categoryName": "Kids",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=171146"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      },
+      {
+        "category": {
+          "categoryId": "175781",
+          "categoryName": "T-Shirts"
+        },
+        "categoryTreeNodeLevel": 5,
+        "categoryTreeNodeAncestors": [
+          {
+            "categoryId": "182044",
+            "categoryName": "Men's Vintage Clothing",
+            "categoryTreeNodeLevel": 4,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=182044"
+          },
+          {
+            "categoryId": "175759",
+            "categoryName": "Vintage",
+            "categoryTreeNodeLevel": 3,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=175759"
+          },
+          {
+            "categoryId": "260033",
+            "categoryName": "Specialty",
+            "categoryTreeNodeLevel": 2,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=260033"
+          },
+          {
+            "categoryId": "11450",
+            "categoryName": "Clothing, Shoes & Accessories",
+            "categoryTreeNodeLevel": 1,
+            "categorySubtreeNodeHref": "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_subtree?category_id=11450"
+          }
+        ]
+      }
+    ],
+    "categoryTreeId": "0",
+    "categoryTreeVersion": "131"
+  }

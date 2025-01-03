@@ -1,0 +1,3785 @@
+{
+    "aspects": [
+      {
+        "localizedAspectName": "Brand",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": true,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": false,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Unbranded"
+          },
+          {
+            "localizedValue": "3DRudder"
+          },
+          {
+            "localizedValue": "3M"
+          },
+          {
+            "localizedValue": "3rd Earth"
+          },
+          {
+            "localizedValue": "4Gamers"
+          },
+          {
+            "localizedValue": "7DAYS"
+          },
+          {
+            "localizedValue": "8Bitdo"
+          },
+          {
+            "localizedValue": "A4TECH"
+          },
+          {
+            "localizedValue": "Acclaim"
+          },
+          {
+            "localizedValue": "Acme"
+          },
+          {
+            "localizedValue": "Activision"
+          },
+          {
+            "localizedValue": "ADATA"
+          },
+          {
+            "localizedValue": "adidas"
+          },
+          {
+            "localizedValue": "Adonit"
+          },
+          {
+            "localizedValue": "AfterGlow"
+          },
+          {
+            "localizedValue": "Agptek"
+          },
+          {
+            "localizedValue": "Alienware"
+          },
+          {
+            "localizedValue": "Alpha Line"
+          },
+          {
+            "localizedValue": "Amazon"
+          },
+          {
+            "localizedValue": "AmazonBasics"
+          },
+          {
+            "localizedValue": "amFilm"
+          },
+          {
+            "localizedValue": "Arctic"
+          },
+          {
+            "localizedValue": "Ardistel"
+          },
+          {
+            "localizedValue": "Arsenal Gaming"
+          },
+          {
+            "localizedValue": "Ashley Furniture"
+          },
+          {
+            "localizedValue": "Astro"
+          },
+          {
+            "localizedValue": "ASUS"
+          },
+          {
+            "localizedValue": "Atari"
+          },
+          {
+            "localizedValue": "AtGames"
+          },
+          {
+            "localizedValue": "Atomic Play"
+          },
+          {
+            "localizedValue": "Audiovox"
+          },
+          {
+            "localizedValue": "Auvisio"
+          },
+          {
+            "localizedValue": "AVB"
+          },
+          {
+            "localizedValue": "Avenger"
+          },
+          {
+            "localizedValue": "Axis"
+          },
+          {
+            "localizedValue": "AZIO Corporation"
+          },
+          {
+            "localizedValue": "B&G"
+          },
+          {
+            "localizedValue": "BALL"
+          },
+          {
+            "localizedValue": "Bally"
+          },
+          {
+            "localizedValue": "Bandai"
+          },
+          {
+            "localizedValue": "Belkin"
+          },
+          {
+            "localizedValue": "BenQ"
+          },
+          {
+            "localizedValue": "Betop"
+          },
+          {
+            "localizedValue": "BGRMods"
+          },
+          {
+            "localizedValue": "Big Ben"
+          },
+          {
+            "localizedValue": "Bigben Interactive"
+          },
+          {
+            "localizedValue": "Blaze"
+          },
+          {
+            "localizedValue": "Blizzard Entertainment"
+          },
+          {
+            "localizedValue": "BodyGuardz"
+          },
+          {
+            "localizedValue": "Brook"
+          },
+          {
+            "localizedValue": "Brooklyn"
+          },
+          {
+            "localizedValue": "Buffalo"
+          },
+          {
+            "localizedValue": "Bullet Button"
+          },
+          {
+            "localizedValue": "Butterfox"
+          },
+          {
+            "localizedValue": "Buyee"
+          },
+          {
+            "localizedValue": "Calibur11"
+          },
+          {
+            "localizedValue": "Camerica"
+          },
+          {
+            "localizedValue": "Capcom"
+          },
+          {
+            "localizedValue": "Casio"
+          },
+          {
+            "localizedValue": "CECompass"
+          },
+          {
+            "localizedValue": "CH Products"
+          },
+          {
+            "localizedValue": "Cirka"
+          },
+          {
+            "localizedValue": "Classic Game Source Inc."
+          },
+          {
+            "localizedValue": "Cobra"
+          },
+          {
+            "localizedValue": "Coleco"
+          },
+          {
+            "localizedValue": "Collective Minds"
+          },
+          {
+            "localizedValue": "Commodore"
+          },
+          {
+            "localizedValue": "Contour Design"
+          },
+          {
+            "localizedValue": "Controller Gear"
+          },
+          {
+            "localizedValue": "Core Gamer"
+          },
+          {
+            "localizedValue": "Corsair"
+          },
+          {
+            "localizedValue": "Creative"
+          },
+          {
+            "localizedValue": "CronusMAX"
+          },
+          {
+            "localizedValue": "Crown"
+          },
+          {
+            "localizedValue": "CTA Digital"
+          },
+          {
+            "localizedValue": "CYBER Gadget"
+          },
+          {
+            "localizedValue": "Cyborg"
+          },
+          {
+            "localizedValue": "Dane-Elec"
+          },
+          {
+            "localizedValue": "Datel"
+          },
+          {
+            "localizedValue": "DayDayUp"
+          },
+          {
+            "localizedValue": "DDR Game"
+          },
+          {
+            "localizedValue": "DecalGirl"
+          },
+          {
+            "localizedValue": "Deruitu"
+          },
+          {
+            "localizedValue": "Digital Research"
+          },
+          {
+            "localizedValue": "Disney"
+          },
+          {
+            "localizedValue": "Do + Be"
+          },
+          {
+            "localizedValue": "DOOGEE"
+          },
+          {
+            "localizedValue": "DPI"
+          },
+          {
+            "localizedValue": "Dragon"
+          },
+          {
+            "localizedValue": "dreamGEAR"
+          },
+          {
+            "localizedValue": "Dual Electronics"
+          },
+          {
+            "localizedValue": "Duracell"
+          },
+          {
+            "localizedValue": "DXRacer"
+          },
+          {
+            "localizedValue": "EA"
+          },
+          {
+            "localizedValue": "EA Sports"
+          },
+          {
+            "localizedValue": "EasyAcc"
+          },
+          {
+            "localizedValue": "Easysmx"
+          },
+          {
+            "localizedValue": "Eaxus"
+          },
+          {
+            "localizedValue": "eBest"
+          },
+          {
+            "localizedValue": "Eclipse"
+          },
+          {
+            "localizedValue": "eDimensional"
+          },
+          {
+            "localizedValue": "EEEKit"
+          },
+          {
+            "localizedValue": "ELECOM"
+          },
+          {
+            "localizedValue": "Elgato"
+          },
+          {
+            "localizedValue": "Elite Products"
+          },
+          {
+            "localizedValue": "EMiO"
+          },
+          {
+            "localizedValue": "Energizer"
+          },
+          {
+            "localizedValue": "EVERCOOL"
+          },
+          {
+            "localizedValue": "Evil Controllers"
+          },
+          {
+            "localizedValue": "Excalibur"
+          },
+          {
+            "localizedValue": "Excelvan"
+          },
+          {
+            "localizedValue": "ezGear"
+          },
+          {
+            "localizedValue": "Fanatec"
+          },
+          {
+            "localizedValue": "FAVI"
+          },
+          {
+            "localizedValue": "Fender-Pro Sound"
+          },
+          {
+            "localizedValue": "Flydigi"
+          },
+          {
+            "localizedValue": "Fosmon"
+          },
+          {
+            "localizedValue": "Frisby"
+          },
+          {
+            "localizedValue": "Fujitsu"
+          },
+          {
+            "localizedValue": "G.MATE"
+          },
+          {
+            "localizedValue": "GAEMS"
+          },
+          {
+            "localizedValue": "Galoob"
+          },
+          {
+            "localizedValue": "Gam3Gear"
+          },
+          {
+            "localizedValue": "Game Boy"
+          },
+          {
+            "localizedValue": "GameDevil"
+          },
+          {
+            "localizedValue": "Game Elements"
+          },
+          {
+            "localizedValue": "Game-On!"
+          },
+          {
+            "localizedValue": "Gamequip"
+          },
+          {
+            "localizedValue": "GameShark"
+          },
+          {
+            "localizedValue": "GameSir"
+          },
+          {
+            "localizedValue": "Gamester"
+          },
+          {
+            "localizedValue": "GameStick"
+          },
+          {
+            "localizedValue": "GameStop"
+          },
+          {
+            "localizedValue": "Gamevice"
+          },
+          {
+            "localizedValue": "Gameware"
+          },
+          {
+            "localizedValue": "GCE"
+          },
+          {
+            "localizedValue": "GelaSkins"
+          },
+          {
+            "localizedValue": "Gembird"
+          },
+          {
+            "localizedValue": "Gemini"
+          },
+          {
+            "localizedValue": "Generic Memory"
+          },
+          {
+            "localizedValue": "Genius"
+          },
+          {
+            "localizedValue": "GeniusMods"
+          },
+          {
+            "localizedValue": "Ghost"
+          },
+          {
+            "localizedValue": "Gigaware"
+          },
+          {
+            "localizedValue": "Gioteck"
+          },
+          {
+            "localizedValue": "GoFlight"
+          },
+          {
+            "localizedValue": "Goldstar"
+          },
+          {
+            "localizedValue": "Google"
+          },
+          {
+            "localizedValue": "Gorilla Gaming"
+          },
+          {
+            "localizedValue": "Gpct"
+          },
+          {
+            "localizedValue": "Graffix"
+          },
+          {
+            "localizedValue": "Gravis"
+          },
+          {
+            "localizedValue": "Greenbrier International"
+          },
+          {
+            "localizedValue": "Griffin"
+          },
+          {
+            "localizedValue": "GT Art"
+          },
+          {
+            "localizedValue": "GT Omega Racing"
+          },
+          {
+            "localizedValue": "Guillemot"
+          },
+          {
+            "localizedValue": "Guitar Hero"
+          },
+          {
+            "localizedValue": "Hais"
+          },
+          {
+            "localizedValue": "Hama"
+          },
+          {
+            "localizedValue": "Harmonix"
+          },
+          {
+            "localizedValue": "Hasbro"
+          },
+          {
+            "localizedValue": "HDE"
+          },
+          {
+            "localizedValue": "Hd Retrovision"
+          },
+          {
+            "localizedValue": "Hello Kitty"
+          },
+          {
+            "localizedValue": "Hercules"
+          },
+          {
+            "localizedValue": "Hexir"
+          },
+          {
+            "localizedValue": "HIDEit Mounts"
+          },
+          {
+            "localizedValue": "Hip Interactive"
+          },
+          {
+            "localizedValue": "Hori"
+          },
+          {
+            "localizedValue": "HP"
+          },
+          {
+            "localizedValue": "HQRP"
+          },
+          {
+            "localizedValue": "Hudson"
+          },
+          {
+            "localizedValue": "Hydra"
+          },
+          {
+            "localizedValue": "Hyperkin"
+          },
+          {
+            "localizedValue": "HyperX"
+          },
+          {
+            "localizedValue": "IBM"
+          },
+          {
+            "localizedValue": "Icon"
+          },
+          {
+            "localizedValue": "IFYOO"
+          },
+          {
+            "localizedValue": "iGadgitz"
+          },
+          {
+            "localizedValue": "iGo"
+          },
+          {
+            "localizedValue": "iLLumiShield"
+          },
+          {
+            "localizedValue": "iMP"
+          },
+          {
+            "localizedValue": "inland"
+          },
+          {
+            "localizedValue": "iNNEXIT"
+          },
+          {
+            "localizedValue": "Innext"
+          },
+          {
+            "localizedValue": "Innovations"
+          },
+          {
+            "localizedValue": "Insignia"
+          },
+          {
+            "localizedValue": "Insten"
+          },
+          {
+            "localizedValue": "Intec"
+          },
+          {
+            "localizedValue": "Intel"
+          },
+          {
+            "localizedValue": "Intellivision"
+          },
+          {
+            "localizedValue": "InterAct"
+          },
+          {
+            "localizedValue": "InterAct Accessories"
+          },
+          {
+            "localizedValue": "IOGEAR"
+          },
+          {
+            "localizedValue": "Ipega"
+          },
+          {
+            "localizedValue": "iSound"
+          },
+          {
+            "localizedValue": "Jabra"
+          },
+          {
+            "localizedValue": "JAKKS Pacific"
+          },
+          {
+            "localizedValue": "Joytech"
+          },
+          {
+            "localizedValue": "JVC"
+          },
+          {
+            "localizedValue": "KCOOL"
+          },
+          {
+            "localizedValue": "Kenneth Cole"
+          },
+          {
+            "localizedValue": "Kensington"
+          },
+          {
+            "localizedValue": "Kinesis"
+          },
+          {
+            "localizedValue": "Kingston"
+          },
+          {
+            "localizedValue": "KMD"
+          },
+          {
+            "localizedValue": "Komodo"
+          },
+          {
+            "localizedValue": "Konami"
+          },
+          {
+            "localizedValue": "Konix"
+          },
+          {
+            "localizedValue": "Konnet"
+          },
+          {
+            "localizedValue": "KontrolFreek"
+          },
+          {
+            "localizedValue": "Kootek"
+          },
+          {
+            "localizedValue": "Kraft"
+          },
+          {
+            "localizedValue": "Kroo"
+          },
+          {
+            "localizedValue": "Kuma"
+          },
+          {
+            "localizedValue": "Laser"
+          },
+          {
+            "localizedValue": "LeapFrog"
+          },
+          {
+            "localizedValue": "Leap Motion"
+          },
+          {
+            "localizedValue": "LEGO"
+          },
+          {
+            "localizedValue": "Lenmar"
+          },
+          {
+            "localizedValue": "Lenovo"
+          },
+          {
+            "localizedValue": "Leshp"
+          },
+          {
+            "localizedValue": "LevelUp"
+          },
+          {
+            "localizedValue": "Lexar"
+          },
+          {
+            "localizedValue": "LG"
+          },
+          {
+            "localizedValue": "Lioncast"
+          },
+          {
+            "localizedValue": "Logic3"
+          },
+          {
+            "localizedValue": "Logic3 International"
+          },
+          {
+            "localizedValue": "Logicool"
+          },
+          {
+            "localizedValue": "Logitech"
+          },
+          {
+            "localizedValue": "Luxmo"
+          },
+          {
+            "localizedValue": "Macally"
+          },
+          {
+            "localizedValue": "Mad Catz"
+          },
+          {
+            "localizedValue": "Madrics"
+          },
+          {
+            "localizedValue": "MagicGate"
+          },
+          {
+            "localizedValue": "Magnavox"
+          },
+          {
+            "localizedValue": "Manhattan"
+          },
+          {
+            "localizedValue": "Mars Devices"
+          },
+          {
+            "localizedValue": "Masione"
+          },
+          {
+            "localizedValue": "Mattel"
+          },
+          {
+            "localizedValue": "MAYFLASH"
+          },
+          {
+            "localizedValue": "Mcbazel"
+          },
+          {
+            "localizedValue": "MemCard"
+          },
+          {
+            "localizedValue": "Memorex"
+          },
+          {
+            "localizedValue": "Messiah Entertainment"
+          },
+          {
+            "localizedValue": "Micro Connectors"
+          },
+          {
+            "localizedValue": "Micro Innovations"
+          },
+          {
+            "localizedValue": "Microsoft"
+          },
+          {
+            "localizedValue": "Mocute"
+          },
+          {
+            "localizedValue": "MOGA"
+          },
+          {
+            "localizedValue": "Momo"
+          },
+          {
+            "localizedValue": "Monster"
+          },
+          {
+            "localizedValue": "Motorola"
+          },
+          {
+            "localizedValue": "Mouse Systems"
+          },
+          {
+            "localizedValue": "MSI"
+          },
+          {
+            "localizedValue": "MTK"
+          },
+          {
+            "localizedValue": "Mumba"
+          },
+          {
+            "localizedValue": "My Arcade"
+          },
+          {
+            "localizedValue": "MYGT"
+          },
+          {
+            "localizedValue": "Myiicco"
+          },
+          {
+            "localizedValue": "NACON"
+          },
+          {
+            "localizedValue": "Naki"
+          },
+          {
+            "localizedValue": "Namco"
+          },
+          {
+            "localizedValue": "N-Control"
+          },
+          {
+            "localizedValue": "NEC"
+          },
+          {
+            "localizedValue": "NERF"
+          },
+          {
+            "localizedValue": "NES"
+          },
+          {
+            "localizedValue": "Next Level Racing"
+          },
+          {
+            "localizedValue": "Nintendo"
+          },
+          {
+            "localizedValue": "Nokia"
+          },
+          {
+            "localizedValue": "Novint"
+          },
+          {
+            "localizedValue": "NubyTech"
+          },
+          {
+            "localizedValue": "Numskull"
+          },
+          {
+            "localizedValue": "NVIDIA"
+          },
+          {
+            "localizedValue": "Nyko Technologies"
+          },
+          {
+            "localizedValue": "Old Skool"
+          },
+          {
+            "localizedValue": "ONN"
+          },
+          {
+            "localizedValue": "ORB"
+          },
+          {
+            "localizedValue": "Ortz"
+          },
+          {
+            "localizedValue": "Orzly"
+          },
+          {
+            "localizedValue": "OSTENT"
+          },
+          {
+            "localizedValue": "P.L.A.Y."
+          },
+          {
+            "localizedValue": "Panasonic"
+          },
+          {
+            "localizedValue": "Patriot"
+          },
+          {
+            "localizedValue": "Patriot Memory"
+          },
+          {
+            "localizedValue": "PC Concepts"
+          },
+          {
+            "localizedValue": "PC Line"
+          },
+          {
+            "localizedValue": "PC Products"
+          },
+          {
+            "localizedValue": "PDP"
+          },
+          {
+            "localizedValue": "PECHAM"
+          },
+          {
+            "localizedValue": "Pelican"
+          },
+          {
+            "localizedValue": "Penguin United"
+          },
+          {
+            "localizedValue": "Performance Designed Products"
+          },
+          {
+            "localizedValue": "Philips"
+          },
+          {
+            "localizedValue": "PINE Technology"
+          },
+          {
+            "localizedValue": "Plantronics"
+          },
+          {
+            "localizedValue": "PLAYFECT"
+          },
+          {
+            "localizedValue": "Playseat"
+          },
+          {
+            "localizedValue": "PlayStation"
+          },
+          {
+            "localizedValue": "PNY"
+          },
+          {
+            "localizedValue": "Pokémon"
+          },
+          {
+            "localizedValue": "Polaroid"
+          },
+          {
+            "localizedValue": "Pound Technology"
+          },
+          {
+            "localizedValue": "PowerA"
+          },
+          {
+            "localizedValue": "Powermat"
+          },
+          {
+            "localizedValue": "Prodico"
+          },
+          {
+            "localizedValue": "PSN"
+          },
+          {
+            "localizedValue": "Ps Vita"
+          },
+          {
+            "localizedValue": "Psyclone"
+          },
+          {
+            "localizedValue": "PXN"
+          },
+          {
+            "localizedValue": "Qanba"
+          },
+          {
+            "localizedValue": "QuickShot"
+          },
+          {
+            "localizedValue": "Qumox"
+          },
+          {
+            "localizedValue": "Radica"
+          },
+          {
+            "localizedValue": "RadioShack"
+          },
+          {
+            "localizedValue": "Razer"
+          },
+          {
+            "localizedValue": "Razor"
+          },
+          {
+            "localizedValue": "RCA"
+          },
+          {
+            "localizedValue": "RDS"
+          },
+          {
+            "localizedValue": "React"
+          },
+          {
+            "localizedValue": "RedOctane"
+          },
+          {
+            "localizedValue": "Renkforce"
+          },
+          {
+            "localizedValue": "Retro-Bit"
+          },
+          {
+            "localizedValue": "Retro Fighters"
+          },
+          {
+            "localizedValue": "Retrolink"
+          },
+          {
+            "localizedValue": "Retro Power"
+          },
+          {
+            "localizedValue": "REYTID"
+          },
+          {
+            "localizedValue": "Rocketfish"
+          },
+          {
+            "localizedValue": "Rocksmith"
+          },
+          {
+            "localizedValue": "Roxio"
+          },
+          {
+            "localizedValue": "SADES"
+          },
+          {
+            "localizedValue": "Saitek"
+          },
+          {
+            "localizedValue": "Sakar"
+          },
+          {
+            "localizedValue": "Samsung"
+          },
+          {
+            "localizedValue": "SanDisk"
+          },
+          {
+            "localizedValue": "Scuf"
+          },
+          {
+            "localizedValue": "Scuf Gaming"
+          },
+          {
+            "localizedValue": "Scythe"
+          },
+          {
+            "localizedValue": "Seagate"
+          },
+          {
+            "localizedValue": "Sears"
+          },
+          {
+            "localizedValue": "SEGA"
+          },
+          {
+            "localizedValue": "Senario"
+          },
+          {
+            "localizedValue": "Sennheiser"
+          },
+          {
+            "localizedValue": "Shareconn"
+          },
+          {
+            "localizedValue": "Sharkoon"
+          },
+          {
+            "localizedValue": "Sharp"
+          },
+          {
+            "localizedValue": "Shinecon"
+          },
+          {
+            "localizedValue": "Skinit"
+          },
+          {
+            "localizedValue": "Skinomi"
+          },
+          {
+            "localizedValue": "Smartfox"
+          },
+          {
+            "localizedValue": "Snakebyte"
+          },
+          {
+            "localizedValue": "SNK"
+          },
+          {
+            "localizedValue": "SODIAL"
+          },
+          {
+            "localizedValue": "Sony"
+          },
+          {
+            "localizedValue": "Sony Interactive Entertainment"
+          },
+          {
+            "localizedValue": "Spartan Gear"
+          },
+          {
+            "localizedValue": "Speck"
+          },
+          {
+            "localizedValue": "Spectravideo"
+          },
+          {
+            "localizedValue": "SPEED LINK"
+          },
+          {
+            "localizedValue": "Spigen"
+          },
+          {
+            "localizedValue": "SplitFish"
+          },
+          {
+            "localizedValue": "Square Deal Recordings & Supplies"
+          },
+          {
+            "localizedValue": "Square Enix"
+          },
+          {
+            "localizedValue": "SquidGrip"
+          },
+          {
+            "localizedValue": "Star Wars"
+          },
+          {
+            "localizedValue": "Steam"
+          },
+          {
+            "localizedValue": "S-Tech"
+          },
+          {
+            "localizedValue": "SteelSeries"
+          },
+          {
+            "localizedValue": "Subsonic"
+          },
+          {
+            "localizedValue": "Suncom Technologies"
+          },
+          {
+            "localizedValue": "Sunix"
+          },
+          {
+            "localizedValue": "Sunsoft"
+          },
+          {
+            "localizedValue": "SUNYEE"
+          },
+          {
+            "localizedValue": "Sweex"
+          },
+          {
+            "localizedValue": "Tacens"
+          },
+          {
+            "localizedValue": "Taito"
+          },
+          {
+            "localizedValue": "Takara"
+          },
+          {
+            "localizedValue": "Talismoon"
+          },
+          {
+            "localizedValue": "Targus"
+          },
+          {
+            "localizedValue": "Techsolo"
+          },
+          {
+            "localizedValue": "Teknogame"
+          },
+          {
+            "localizedValue": "Ten One Design"
+          },
+          {
+            "localizedValue": "The Ant Commandos"
+          },
+          {
+            "localizedValue": "THQ"
+          },
+          {
+            "localizedValue": "Thrustmaster"
+          },
+          {
+            "localizedValue": "TKOOFN"
+          },
+          {
+            "localizedValue": "Tomee"
+          },
+          {
+            "localizedValue": "Toshiba"
+          },
+          {
+            "localizedValue": "Toymax"
+          },
+          {
+            "localizedValue": "Transcend"
+          },
+          {
+            "localizedValue": "Tritton"
+          },
+          {
+            "localizedValue": "Tronsmart"
+          },
+          {
+            "localizedValue": "Trust"
+          },
+          {
+            "localizedValue": "TTX"
+          },
+          {
+            "localizedValue": "TTX Tech"
+          },
+          {
+            "localizedValue": "Tuact"
+          },
+          {
+            "localizedValue": "Turtle Beach"
+          },
+          {
+            "localizedValue": "TUTUO"
+          },
+          {
+            "localizedValue": "TVPeCee"
+          },
+          {
+            "localizedValue": "TYCO"
+          },
+          {
+            "localizedValue": "Ubisoft"
+          },
+          {
+            "localizedValue": "Ugreen"
+          },
+          {
+            "localizedValue": "Ultron"
+          },
+          {
+            "localizedValue": "Under Control"
+          },
+          {
+            "localizedValue": "Universal Remote Control"
+          },
+          {
+            "localizedValue": "uxcell"
+          },
+          {
+            "localizedValue": "Valve"
+          },
+          {
+            "localizedValue": "Velleman"
+          },
+          {
+            "localizedValue": "Venom"
+          },
+          {
+            "localizedValue": "Verbatim"
+          },
+          {
+            "localizedValue": "VicTsing"
+          },
+          {
+            "localizedValue": "vidaXL"
+          },
+          {
+            "localizedValue": "VIDIS"
+          },
+          {
+            "localizedValue": "VTech"
+          },
+          {
+            "localizedValue": "Wheel Stand Racing"
+          },
+          {
+            "localizedValue": "Wicked Wired"
+          },
+          {
+            "localizedValue": "WICO"
+          },
+          {
+            "localizedValue": "Wrappz"
+          },
+          {
+            "localizedValue": "Wrapsol"
+          },
+          {
+            "localizedValue": "WraptorSkinz"
+          },
+          {
+            "localizedValue": "XCM"
+          },
+          {
+            "localizedValue": "XCSOURCE"
+          },
+          {
+            "localizedValue": "Xgaming"
+          },
+          {
+            "localizedValue": "XIM"
+          },
+          {
+            "localizedValue": "X Rocker"
+          },
+          {
+            "localizedValue": "Xtreme"
+          },
+          {
+            "localizedValue": "Yallstore"
+          },
+          {
+            "localizedValue": "YCCTEAM"
+          },
+          {
+            "localizedValue": "YOBO"
+          },
+          {
+            "localizedValue": "Y Team"
+          },
+          {
+            "localizedValue": "ZAGG"
+          },
+          {
+            "localizedValue": "ZapIt"
+          },
+          {
+            "localizedValue": "ZD"
+          },
+          {
+            "localizedValue": "ZD Wines"
+          },
+          {
+            "localizedValue": "ZedLabz"
+          },
+          {
+            "localizedValue": "Zenex"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Type",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": true,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "External Attachment"
+          },
+          {
+            "localizedValue": "Decal"
+          },
+          {
+            "localizedValue": "External Stand"
+          },
+          {
+            "localizedValue": "Faceplate"
+          },
+          {
+            "localizedValue": "Internal Fan"
+          },
+          {
+            "localizedValue": "Sticker"
+          },
+          {
+            "localizedValue": "Ac Adapter"
+          },
+          {
+            "localizedValue": "Adaptor"
+          },
+          {
+            "localizedValue": "Animal Jam"
+          },
+          {
+            "localizedValue": "Arcade Controller"
+          },
+          {
+            "localizedValue": "Audio Adapter"
+          },
+          {
+            "localizedValue": "AV Adapter"
+          },
+          {
+            "localizedValue": "AV Cable"
+          },
+          {
+            "localizedValue": "AV to USB Gameplay Recorder"
+          },
+          {
+            "localizedValue": "Backpack"
+          },
+          {
+            "localizedValue": "Balance Board"
+          },
+          {
+            "localizedValue": "Bat"
+          },
+          {
+            "localizedValue": "Battery Cover"
+          },
+          {
+            "localizedValue": "Bluetooth Adapter"
+          },
+          {
+            "localizedValue": "Bongos"
+          },
+          {
+            "localizedValue": "Bow/Crossbow"
+          },
+          {
+            "localizedValue": "Bowling Ball"
+          },
+          {
+            "localizedValue": "Boxing Gloves"
+          },
+          {
+            "localizedValue": "Breakaway Adapter"
+          },
+          {
+            "localizedValue": "Buzzer"
+          },
+          {
+            "localizedValue": "Camera/Web-Cam"
+          },
+          {
+            "localizedValue": "Car Charger"
+          },
+          {
+            "localizedValue": "Carry/Shoulder Bag"
+          },
+          {
+            "localizedValue": "Carrying Cases"
+          },
+          {
+            "localizedValue": "Chainsaw"
+          },
+          {
+            "localizedValue": "Charging Dock"
+          },
+          {
+            "localizedValue": "Charging Grip"
+          },
+          {
+            "localizedValue": "Controller"
+          },
+          {
+            "localizedValue": "Controller Adapter"
+          },
+          {
+            "localizedValue": "Controller Extension Cable"
+          },
+          {
+            "localizedValue": "Controller Stand"
+          },
+          {
+            "localizedValue": "Control Pad"
+          },
+          {
+            "localizedValue": "Dance Pad"
+          },
+          {
+            "localizedValue": "Dongle"
+          },
+          {
+            "localizedValue": "Drum Pedal"
+          },
+          {
+            "localizedValue": "Drum Set"
+          },
+          {
+            "localizedValue": "EA Access"
+          },
+          {
+            "localizedValue": "Ethernet Cable"
+          },
+          {
+            "localizedValue": "Extension Cable"
+          },
+          {
+            "localizedValue": "Fanny Pack"
+          },
+          {
+            "localizedValue": "Fighting Stick/Arcade Pad"
+          },
+          {
+            "localizedValue": "Fishing Rod"
+          },
+          {
+            "localizedValue": "Flight Instrument Panel"
+          },
+          {
+            "localizedValue": "Flight Pedal"
+          },
+          {
+            "localizedValue": "Flight Simulation Package"
+          },
+          {
+            "localizedValue": "Flight Stick"
+          },
+          {
+            "localizedValue": "Flight Throttle"
+          },
+          {
+            "localizedValue": "Flight Yoke"
+          },
+          {
+            "localizedValue": "Game Case"
+          },
+          {
+            "localizedValue": "Game Case/Sleeve"
+          },
+          {
+            "localizedValue": "Gamepad"
+          },
+          {
+            "localizedValue": "Gaming Keyboard"
+          },
+          {
+            "localizedValue": "Gaming Keypad"
+          },
+          {
+            "localizedValue": "Gaming Triggers"
+          },
+          {
+            "localizedValue": "Golf Club"
+          },
+          {
+            "localizedValue": "Guitar"
+          },
+          {
+            "localizedValue": "Gun Controller"
+          },
+          {
+            "localizedValue": "Handbrake"
+          },
+          {
+            "localizedValue": "Headset Adapter"
+          },
+          {
+            "localizedValue": "Heart Rate Monitor"
+          },
+          {
+            "localizedValue": "Joy-Con Strap"
+          },
+          {
+            "localizedValue": "Joystick"
+          },
+          {
+            "localizedValue": "Jump Rope"
+          },
+          {
+            "localizedValue": "Keyboard"
+          },
+          {
+            "localizedValue": "Keyboard & Mouse Adapter"
+          },
+          {
+            "localizedValue": "Lan Adapter"
+          },
+          {
+            "localizedValue": "Light Gun"
+          },
+          {
+            "localizedValue": "Link Cable"
+          },
+          {
+            "localizedValue": "Mains Charger"
+          },
+          {
+            "localizedValue": "Microphone"
+          },
+          {
+            "localizedValue": "Mini Steering Wheel"
+          },
+          {
+            "localizedValue": "Mobile Controller"
+          },
+          {
+            "localizedValue": "Mobile Gaming Trigger"
+          },
+          {
+            "localizedValue": "Modded Controller"
+          },
+          {
+            "localizedValue": "Motion Camera"
+          },
+          {
+            "localizedValue": "Motion Controller"
+          },
+          {
+            "localizedValue": "Motion Controller Shell"
+          },
+          {
+            "localizedValue": "Motion Sensor"
+          },
+          {
+            "localizedValue": "Multimedia Remote"
+          },
+          {
+            "localizedValue": "Multitap"
+          },
+          {
+            "localizedValue": "Music Keyboard"
+          },
+          {
+            "localizedValue": "Navigation Controller/Nunchuck"
+          },
+          {
+            "localizedValue": "Nintendo eShop"
+          },
+          {
+            "localizedValue": "Nintendo Points"
+          },
+          {
+            "localizedValue": "Nunchuk"
+          },
+          {
+            "localizedValue": "Paddles"
+          },
+          {
+            "localizedValue": "PlayStation Network"
+          },
+          {
+            "localizedValue": "Pouch"
+          },
+          {
+            "localizedValue": "Power Adapter"
+          },
+          {
+            "localizedValue": "Power Cable"
+          },
+          {
+            "localizedValue": "Power Glove"
+          },
+          {
+            "localizedValue": "Protective Shell/Skin"
+          },
+          {
+            "localizedValue": "Racing Wheel"
+          },
+          {
+            "localizedValue": "Racket"
+          },
+          {
+            "localizedValue": "Rf Adapter"
+          },
+          {
+            "localizedValue": "RF Switch Adapter"
+          },
+          {
+            "localizedValue": "Robot"
+          },
+          {
+            "localizedValue": "SATA Network Adapter"
+          },
+          {
+            "localizedValue": "Sensor Bar"
+          },
+          {
+            "localizedValue": "Skateboard"
+          },
+          {
+            "localizedValue": "Smartphone Gaming Grip"
+          },
+          {
+            "localizedValue": "Snes"
+          },
+          {
+            "localizedValue": "Snowboard"
+          },
+          {
+            "localizedValue": "Stand"
+          },
+          {
+            "localizedValue": "Steam Wallet"
+          },
+          {
+            "localizedValue": "Steering Wheel Stand"
+          },
+          {
+            "localizedValue": "Storage Bag"
+          },
+          {
+            "localizedValue": "Thumbstick Grip/Cap"
+          },
+          {
+            "localizedValue": "Travel Case"
+          },
+          {
+            "localizedValue": "Turntables"
+          },
+          {
+            "localizedValue": "TV Mount/Clip"
+          },
+          {
+            "localizedValue": "Universal Media Remote"
+          },
+          {
+            "localizedValue": "USB Adapter"
+          },
+          {
+            "localizedValue": "USB Cable"
+          },
+          {
+            "localizedValue": "USB Charger"
+          },
+          {
+            "localizedValue": "Usb Controller"
+          },
+          {
+            "localizedValue": "Usb Hub"
+          },
+          {
+            "localizedValue": "Wall Charger"
+          },
+          {
+            "localizedValue": "Wall Mount"
+          },
+          {
+            "localizedValue": "Wired Network Adapter"
+          },
+          {
+            "localizedValue": "Wireless Controller Receiver"
+          },
+          {
+            "localizedValue": "Wireless Network Adapter"
+          },
+          {
+            "localizedValue": "Xbox Live Microsoft Points"
+          },
+          {
+            "localizedValue": "Zapper"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Cable Length",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "1ft."
+          },
+          {
+            "localizedValue": "2ft."
+          },
+          {
+            "localizedValue": "3ft"
+          },
+          {
+            "localizedValue": "4ft."
+          },
+          {
+            "localizedValue": "5ft."
+          },
+          {
+            "localizedValue": "6ft"
+          },
+          {
+            "localizedValue": "7ft"
+          },
+          {
+            "localizedValue": "8ft."
+          },
+          {
+            "localizedValue": "9ft."
+          },
+          {
+            "localizedValue": "10ft."
+          },
+          {
+            "localizedValue": "11ft."
+          },
+          {
+            "localizedValue": "12ft."
+          },
+          {
+            "localizedValue": "13ft."
+          },
+          {
+            "localizedValue": "14ft."
+          },
+          {
+            "localizedValue": "15ft."
+          },
+          {
+            "localizedValue": "16ft."
+          },
+          {
+            "localizedValue": "17ft."
+          },
+          {
+            "localizedValue": "18ft."
+          },
+          {
+            "localizedValue": "19ft."
+          },
+          {
+            "localizedValue": "20ft."
+          },
+          {
+            "localizedValue": "21ft."
+          },
+          {
+            "localizedValue": "22ft."
+          },
+          {
+            "localizedValue": "23ft."
+          },
+          {
+            "localizedValue": "24ft."
+          },
+          {
+            "localizedValue": "25ft."
+          },
+          {
+            "localizedValue": "1m"
+          },
+          {
+            "localizedValue": "2m"
+          },
+          {
+            "localizedValue": "3m"
+          },
+          {
+            "localizedValue": "4m"
+          },
+          {
+            "localizedValue": "5m"
+          },
+          {
+            "localizedValue": "6m"
+          },
+          {
+            "localizedValue": "7m"
+          },
+          {
+            "localizedValue": "8m"
+          },
+          {
+            "localizedValue": "9m"
+          },
+          {
+            "localizedValue": "10m"
+          },
+          {
+            "localizedValue": "11m"
+          },
+          {
+            "localizedValue": "13m"
+          },
+          {
+            "localizedValue": "17m"
+          },
+          {
+            "localizedValue": "19m"
+          },
+          {
+            "localizedValue": "21m"
+          },
+          {
+            "localizedValue": "23m"
+          },
+          {
+            "localizedValue": "25m"
+          },
+          {
+            "localizedValue": "12m"
+          },
+          {
+            "localizedValue": "14m"
+          },
+          {
+            "localizedValue": "15m"
+          },
+          {
+            "localizedValue": "16m"
+          },
+          {
+            "localizedValue": "18m"
+          },
+          {
+            "localizedValue": "20m"
+          },
+          {
+            "localizedValue": "22m"
+          },
+          {
+            "localizedValue": "24m"
+          },
+          {
+            "localizedValue": "Not Applicable"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "California Prop 65 Warning",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": false,
+          "aspectMaxLength": 800
+        }
+      },
+      {
+        "localizedAspectName": "Color",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Beige"
+          },
+          {
+            "localizedValue": "Black"
+          },
+          {
+            "localizedValue": "Blue"
+          },
+          {
+            "localizedValue": "Brown"
+          },
+          {
+            "localizedValue": "Clear"
+          },
+          {
+            "localizedValue": "Gold"
+          },
+          {
+            "localizedValue": "Gray"
+          },
+          {
+            "localizedValue": "Green"
+          },
+          {
+            "localizedValue": "Multicolor"
+          },
+          {
+            "localizedValue": "Orange"
+          },
+          {
+            "localizedValue": "Pink"
+          },
+          {
+            "localizedValue": "Purple"
+          },
+          {
+            "localizedValue": "Red"
+          },
+          {
+            "localizedValue": "Silver"
+          },
+          {
+            "localizedValue": "White"
+          },
+          {
+            "localizedValue": "Yellow"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Compatible Model",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "For 3DO"
+          },
+          {
+            "localizedValue": "For Amstrad GX4000"
+          },
+          {
+            "localizedValue": "For Android"
+          },
+          {
+            "localizedValue": "For Apple"
+          },
+          {
+            "localizedValue": "For Apple Bandai Pippin"
+          },
+          {
+            "localizedValue": "For Atari 2600"
+          },
+          {
+            "localizedValue": "For Atari 5200"
+          },
+          {
+            "localizedValue": "For Atari 7800"
+          },
+          {
+            "localizedValue": "For Atari Jaguar"
+          },
+          {
+            "localizedValue": "For Atari Jaguar CD"
+          },
+          {
+            "localizedValue": "For Atari Lynx"
+          },
+          {
+            "localizedValue": "For Atari XEGS"
+          },
+          {
+            "localizedValue": "For Bally Astrocade"
+          },
+          {
+            "localizedValue": "For Bandai WonderSwan"
+          },
+          {
+            "localizedValue": "For Bandai WonderSwan Color"
+          },
+          {
+            "localizedValue": "For Casio Loopy"
+          },
+          {
+            "localizedValue": "For Coleco Telstar"
+          },
+          {
+            "localizedValue": "For ColecoVision"
+          },
+          {
+            "localizedValue": "For Commodore 64"
+          },
+          {
+            "localizedValue": "For Commodore Amiga CD32"
+          },
+          {
+            "localizedValue": "For Fairchild Channel F (VES)"
+          },
+          {
+            "localizedValue": "For FM Towns Marty"
+          },
+          {
+            "localizedValue": "For Game.com"
+          },
+          {
+            "localizedValue": "For Interton VC 4000"
+          },
+          {
+            "localizedValue": "For Magnavox Odyssey"
+          },
+          {
+            "localizedValue": "For Magnavox Odyssey 2"
+          },
+          {
+            "localizedValue": "For Mattel Intellivision"
+          },
+          {
+            "localizedValue": "For Microsoft Xbox"
+          },
+          {
+            "localizedValue": "For Microsoft Xbox 360"
+          },
+          {
+            "localizedValue": "For Microsoft Xbox One"
+          },
+          {
+            "localizedValue": "For Microsoft Xbox Series S"
+          },
+          {
+            "localizedValue": "For Microsoft Xbox Series X"
+          },
+          {
+            "localizedValue": "For Multi-Platform"
+          },
+          {
+            "localizedValue": "For NEC PC-FX"
+          },
+          {
+            "localizedValue": "For Neo Geo AES"
+          },
+          {
+            "localizedValue": "For Neo Geo CD"
+          },
+          {
+            "localizedValue": "For Neo Geo Pocket"
+          },
+          {
+            "localizedValue": "For Neo Geo Pocket Color"
+          },
+          {
+            "localizedValue": "For Nintendo 2DS XL"
+          },
+          {
+            "localizedValue": "For Nintendo 3DS"
+          },
+          {
+            "localizedValue": "For Nintendo 64"
+          },
+          {
+            "localizedValue": "For Nintendo Classic Mini"
+          },
+          {
+            "localizedValue": "For Nintendo DS"
+          },
+          {
+            "localizedValue": "For Nintendo Famicon"
+          },
+          {
+            "localizedValue": "For Nintendo Game Boy"
+          },
+          {
+            "localizedValue": "For Nintendo Game Boy Advance"
+          },
+          {
+            "localizedValue": "For Nintendo Game Boy Color"
+          },
+          {
+            "localizedValue": "For Nintendo NES"
+          },
+          {
+            "localizedValue": "For Nintendo NES Classic Edition"
+          },
+          {
+            "localizedValue": "For Nintendo SNES"
+          },
+          {
+            "localizedValue": "For Nintendo Super NES Classic Edition"
+          },
+          {
+            "localizedValue": "For Nintendo Super NES Classic Mini"
+          },
+          {
+            "localizedValue": "For Nintendo Switch"
+          },
+          {
+            "localizedValue": "For Nintendo Virtual Boy"
+          },
+          {
+            "localizedValue": "For Nintendo Wii"
+          },
+          {
+            "localizedValue": "For Nintendo Wii U"
+          },
+          {
+            "localizedValue": "For OUYA"
+          },
+          {
+            "localizedValue": "For Panasonic Q"
+          },
+          {
+            "localizedValue": "For PC"
+          },
+          {
+            "localizedValue": "For Philips CD-i"
+          },
+          {
+            "localizedValue": "For RCA Studio II"
+          },
+          {
+            "localizedValue": "For Sega CD"
+          },
+          {
+            "localizedValue": "For Sega CDX"
+          },
+          {
+            "localizedValue": "For Sega Dreamcast"
+          },
+          {
+            "localizedValue": "For Sega Game Gear"
+          },
+          {
+            "localizedValue": "For Sega Genesis"
+          },
+          {
+            "localizedValue": "For Sega Genesis 32X"
+          },
+          {
+            "localizedValue": "For Sega Genesis Nomad"
+          },
+          {
+            "localizedValue": "For Sega Master System"
+          },
+          {
+            "localizedValue": "For Sega Mega-CD"
+          },
+          {
+            "localizedValue": "For Sega Mega Drive"
+          },
+          {
+            "localizedValue": "For Sega Mega Drive 32X"
+          },
+          {
+            "localizedValue": "For Sega Mega Drive Mini"
+          },
+          {
+            "localizedValue": "For Sega Multi-Mega"
+          },
+          {
+            "localizedValue": "For Sega Saturn"
+          },
+          {
+            "localizedValue": "For Sega SG-1000"
+          },
+          {
+            "localizedValue": "For Sony PlayStation 1"
+          },
+          {
+            "localizedValue": "For Sony PlayStation 2"
+          },
+          {
+            "localizedValue": "For Sony PlayStation 3"
+          },
+          {
+            "localizedValue": "For Sony PlayStation 4"
+          },
+          {
+            "localizedValue": "For Sony PlayStation 5"
+          },
+          {
+            "localizedValue": "For Sony PlayStation TV"
+          },
+          {
+            "localizedValue": "For Sony PlayStation Vita"
+          },
+          {
+            "localizedValue": "For Sony PSP"
+          },
+          {
+            "localizedValue": "For Super A'can"
+          },
+          {
+            "localizedValue": "For Super Famicom"
+          },
+          {
+            "localizedValue": "For TurboExpress"
+          },
+          {
+            "localizedValue": "For TurboGrafx-16 (PC Engine)"
+          },
+          {
+            "localizedValue": "For TurboGrafx-CD/TurboDuo"
+          },
+          {
+            "localizedValue": "For Usb"
+          },
+          {
+            "localizedValue": "For Vectrex"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Compatible Product",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Battery Pack"
+          },
+          {
+            "localizedValue": "Console"
+          },
+          {
+            "localizedValue": "Console, Games & Accessories"
+          },
+          {
+            "localizedValue": "Console & Games"
+          },
+          {
+            "localizedValue": "Controller"
+          },
+          {
+            "localizedValue": "Game(s)"
+          },
+          {
+            "localizedValue": "Game Card"
+          },
+          {
+            "localizedValue": "Headset"
+          },
+          {
+            "localizedValue": "Memory Cards"
+          },
+          {
+            "localizedValue": "Motion Sensor/Camera"
+          },
+          {
+            "localizedValue": "Smartphone"
+          },
+          {
+            "localizedValue": "Wii Remote"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Connectivity",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Controller Attachment"
+          },
+          {
+            "localizedValue": "Not Applicable"
+          },
+          {
+            "localizedValue": "Wired"
+          },
+          {
+            "localizedValue": "Wireless"
+          },
+          {
+            "localizedValue": "2.4GHz RF"
+          },
+          {
+            "localizedValue": "Bluetooth"
+          },
+          {
+            "localizedValue": "Component (YPbPr)"
+          },
+          {
+            "localizedValue": "Composite/RCA"
+          },
+          {
+            "localizedValue": "DECT RF"
+          },
+          {
+            "localizedValue": "DVI/DVI-D"
+          },
+          {
+            "localizedValue": "HDMI"
+          },
+          {
+            "localizedValue": "Infrared"
+          },
+          {
+            "localizedValue": "Lightning"
+          },
+          {
+            "localizedValue": "Multi-Connection"
+          },
+          {
+            "localizedValue": "Optical Cable"
+          },
+          {
+            "localizedValue": "Parallel (IEEE 1284)"
+          },
+          {
+            "localizedValue": "PCI Express"
+          },
+          {
+            "localizedValue": "Proprietary"
+          },
+          {
+            "localizedValue": "PS/2"
+          },
+          {
+            "localizedValue": "RF"
+          },
+          {
+            "localizedValue": "Rf Switch"
+          },
+          {
+            "localizedValue": "SCART"
+          },
+          {
+            "localizedValue": "Serial (RS-232)"
+          },
+          {
+            "localizedValue": "S-Video"
+          },
+          {
+            "localizedValue": "USB"
+          },
+          {
+            "localizedValue": "USB-C"
+          },
+          {
+            "localizedValue": "VGA"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Country/Region of Manufacture",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "SELECTION_ONLY",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Afghanistan"
+          },
+          {
+            "localizedValue": "Albania"
+          },
+          {
+            "localizedValue": "Algeria"
+          },
+          {
+            "localizedValue": "American Samoa"
+          },
+          {
+            "localizedValue": "Andorra"
+          },
+          {
+            "localizedValue": "Angola"
+          },
+          {
+            "localizedValue": "Anguilla"
+          },
+          {
+            "localizedValue": "Antarctica"
+          },
+          {
+            "localizedValue": "Antigua and Barbuda"
+          },
+          {
+            "localizedValue": "Argentina"
+          },
+          {
+            "localizedValue": "Armenia"
+          },
+          {
+            "localizedValue": "Aruba"
+          },
+          {
+            "localizedValue": "Australia"
+          },
+          {
+            "localizedValue": "Austria"
+          },
+          {
+            "localizedValue": "Azerbaijan"
+          },
+          {
+            "localizedValue": "Bahamas"
+          },
+          {
+            "localizedValue": "Bahrain"
+          },
+          {
+            "localizedValue": "Bangladesh"
+          },
+          {
+            "localizedValue": "Barbados"
+          },
+          {
+            "localizedValue": "Belarus"
+          },
+          {
+            "localizedValue": "Belgium"
+          },
+          {
+            "localizedValue": "Belize"
+          },
+          {
+            "localizedValue": "Benin"
+          },
+          {
+            "localizedValue": "Bermuda"
+          },
+          {
+            "localizedValue": "Bhutan"
+          },
+          {
+            "localizedValue": "Bolivia"
+          },
+          {
+            "localizedValue": "Bosnia and Herzegovina"
+          },
+          {
+            "localizedValue": "Botswana"
+          },
+          {
+            "localizedValue": "Bouvet Island"
+          },
+          {
+            "localizedValue": "Brazil"
+          },
+          {
+            "localizedValue": "British Indian Ocean Territory"
+          },
+          {
+            "localizedValue": "Brunei Darussalam"
+          },
+          {
+            "localizedValue": "Bulgaria"
+          },
+          {
+            "localizedValue": "Burkina Faso"
+          },
+          {
+            "localizedValue": "Burundi"
+          },
+          {
+            "localizedValue": "Cambodia"
+          },
+          {
+            "localizedValue": "Cameroon"
+          },
+          {
+            "localizedValue": "Canada"
+          },
+          {
+            "localizedValue": "Cape Verde"
+          },
+          {
+            "localizedValue": "Cayman Islands"
+          },
+          {
+            "localizedValue": "Central African Republic"
+          },
+          {
+            "localizedValue": "Chad"
+          },
+          {
+            "localizedValue": "Chile"
+          },
+          {
+            "localizedValue": "China"
+          },
+          {
+            "localizedValue": "Christmas Island"
+          },
+          {
+            "localizedValue": "Cocos (Keeling) Islands"
+          },
+          {
+            "localizedValue": "Colombia"
+          },
+          {
+            "localizedValue": "Comoros"
+          },
+          {
+            "localizedValue": "Congo"
+          },
+          {
+            "localizedValue": "Cook Islands"
+          },
+          {
+            "localizedValue": "Costa Rica"
+          },
+          {
+            "localizedValue": "Côte d'Ivoire"
+          },
+          {
+            "localizedValue": "Croatia"
+          },
+          {
+            "localizedValue": "Cyprus"
+          },
+          {
+            "localizedValue": "Czechia"
+          },
+          {
+            "localizedValue": "Denmark"
+          },
+          {
+            "localizedValue": "Djibouti"
+          },
+          {
+            "localizedValue": "Dominica"
+          },
+          {
+            "localizedValue": "Dominican Republic"
+          },
+          {
+            "localizedValue": "Ecuador"
+          },
+          {
+            "localizedValue": "Egypt"
+          },
+          {
+            "localizedValue": "El Salvador"
+          },
+          {
+            "localizedValue": "Equatorial Guinea"
+          },
+          {
+            "localizedValue": "Eritrea"
+          },
+          {
+            "localizedValue": "Estonia"
+          },
+          {
+            "localizedValue": "Eswatini"
+          },
+          {
+            "localizedValue": "Ethiopia"
+          },
+          {
+            "localizedValue": "Falkland Islands"
+          },
+          {
+            "localizedValue": "Faroe Islands"
+          },
+          {
+            "localizedValue": "Fiji"
+          },
+          {
+            "localizedValue": "Finland"
+          },
+          {
+            "localizedValue": "France"
+          },
+          {
+            "localizedValue": "French Guiana"
+          },
+          {
+            "localizedValue": "French Polynesia Includes Tahiti"
+          },
+          {
+            "localizedValue": "French Southern Territories"
+          },
+          {
+            "localizedValue": "Gabon"
+          },
+          {
+            "localizedValue": "Gambia"
+          },
+          {
+            "localizedValue": "Georgia"
+          },
+          {
+            "localizedValue": "Germany"
+          },
+          {
+            "localizedValue": "Ghana"
+          },
+          {
+            "localizedValue": "Gibraltar"
+          },
+          {
+            "localizedValue": "Greece"
+          },
+          {
+            "localizedValue": "Greenland"
+          },
+          {
+            "localizedValue": "Grenada"
+          },
+          {
+            "localizedValue": "Guadeloupe"
+          },
+          {
+            "localizedValue": "Guam"
+          },
+          {
+            "localizedValue": "Guatemala"
+          },
+          {
+            "localizedValue": "Guernsey"
+          },
+          {
+            "localizedValue": "Guinea"
+          },
+          {
+            "localizedValue": "Guinea-Bissau"
+          },
+          {
+            "localizedValue": "Guyana"
+          },
+          {
+            "localizedValue": "Haiti"
+          },
+          {
+            "localizedValue": "Heard Island and Mcdonald Islands"
+          },
+          {
+            "localizedValue": "Holy See (Vatican City State)"
+          },
+          {
+            "localizedValue": "Honduras"
+          },
+          {
+            "localizedValue": "Hong Kong"
+          },
+          {
+            "localizedValue": "Hungary"
+          },
+          {
+            "localizedValue": "Iceland"
+          },
+          {
+            "localizedValue": "India"
+          },
+          {
+            "localizedValue": "Indonesia"
+          },
+          {
+            "localizedValue": "Iraq"
+          },
+          {
+            "localizedValue": "Ireland"
+          },
+          {
+            "localizedValue": "Israel"
+          },
+          {
+            "localizedValue": "Italy"
+          },
+          {
+            "localizedValue": "Jamaica"
+          },
+          {
+            "localizedValue": "Japan"
+          },
+          {
+            "localizedValue": "Jersey"
+          },
+          {
+            "localizedValue": "Jordan"
+          },
+          {
+            "localizedValue": "Kazakhstan"
+          },
+          {
+            "localizedValue": "Kenya"
+          },
+          {
+            "localizedValue": "Kiribati"
+          },
+          {
+            "localizedValue": "Korea, Republic of"
+          },
+          {
+            "localizedValue": "Kuwait"
+          },
+          {
+            "localizedValue": "Kyrgyzstan"
+          },
+          {
+            "localizedValue": "Lao People's Democratic Republic"
+          },
+          {
+            "localizedValue": "Latvia"
+          },
+          {
+            "localizedValue": "Lebanon"
+          },
+          {
+            "localizedValue": "Lesotho"
+          },
+          {
+            "localizedValue": "Liberia"
+          },
+          {
+            "localizedValue": "Libyan Arab Jamahiriya"
+          },
+          {
+            "localizedValue": "Liechtenstein"
+          },
+          {
+            "localizedValue": "Lithuania"
+          },
+          {
+            "localizedValue": "Luxembourg"
+          },
+          {
+            "localizedValue": "Macao"
+          },
+          {
+            "localizedValue": "Madagascar"
+          },
+          {
+            "localizedValue": "Malawi"
+          },
+          {
+            "localizedValue": "Malaysia"
+          },
+          {
+            "localizedValue": "Maldives"
+          },
+          {
+            "localizedValue": "Mali"
+          },
+          {
+            "localizedValue": "Malta"
+          },
+          {
+            "localizedValue": "Marshall Islands"
+          },
+          {
+            "localizedValue": "Martinique"
+          },
+          {
+            "localizedValue": "Mauritania"
+          },
+          {
+            "localizedValue": "Mauritius"
+          },
+          {
+            "localizedValue": "Mayotte"
+          },
+          {
+            "localizedValue": "Mexico"
+          },
+          {
+            "localizedValue": "Micronesia, Federated States of"
+          },
+          {
+            "localizedValue": "Moldova, Republic of"
+          },
+          {
+            "localizedValue": "Monaco"
+          },
+          {
+            "localizedValue": "Mongolia"
+          },
+          {
+            "localizedValue": "Montenegro"
+          },
+          {
+            "localizedValue": "Montserrat"
+          },
+          {
+            "localizedValue": "Morocco"
+          },
+          {
+            "localizedValue": "Mozambique"
+          },
+          {
+            "localizedValue": "Namibia"
+          },
+          {
+            "localizedValue": "Nauru"
+          },
+          {
+            "localizedValue": "Nepal"
+          },
+          {
+            "localizedValue": "Netherlands"
+          },
+          {
+            "localizedValue": "Netherlands Antilles"
+          },
+          {
+            "localizedValue": "New Caledonia"
+          },
+          {
+            "localizedValue": "New Zealand"
+          },
+          {
+            "localizedValue": "Nicaragua"
+          },
+          {
+            "localizedValue": "Niger"
+          },
+          {
+            "localizedValue": "Nigeria"
+          },
+          {
+            "localizedValue": "Niue"
+          },
+          {
+            "localizedValue": "Norfolk Island"
+          },
+          {
+            "localizedValue": "Northern Mariana Islands"
+          },
+          {
+            "localizedValue": "North Macedonia"
+          },
+          {
+            "localizedValue": "Norway"
+          },
+          {
+            "localizedValue": "Oman"
+          },
+          {
+            "localizedValue": "Pakistan"
+          },
+          {
+            "localizedValue": "Palau"
+          },
+          {
+            "localizedValue": "Palestinian Territories"
+          },
+          {
+            "localizedValue": "Panama"
+          },
+          {
+            "localizedValue": "Papua New Guinea"
+          },
+          {
+            "localizedValue": "Paraguay"
+          },
+          {
+            "localizedValue": "Peru"
+          },
+          {
+            "localizedValue": "Philippines"
+          },
+          {
+            "localizedValue": "Pitcairn"
+          },
+          {
+            "localizedValue": "Pitcairn Island"
+          },
+          {
+            "localizedValue": "Poland"
+          },
+          {
+            "localizedValue": "Portugal"
+          },
+          {
+            "localizedValue": "Puerto Rico"
+          },
+          {
+            "localizedValue": "Qatar"
+          },
+          {
+            "localizedValue": "Reunion"
+          },
+          {
+            "localizedValue": "Romania"
+          },
+          {
+            "localizedValue": "Russian Federation"
+          },
+          {
+            "localizedValue": "Rwanda"
+          },
+          {
+            "localizedValue": "Saint Helena"
+          },
+          {
+            "localizedValue": "Saint Kitts and Nevis"
+          },
+          {
+            "localizedValue": "Saint Lucia"
+          },
+          {
+            "localizedValue": "Saint Pierre and Miquelon"
+          },
+          {
+            "localizedValue": "Saint Vincent and the Grenadines"
+          },
+          {
+            "localizedValue": "Samoa"
+          },
+          {
+            "localizedValue": "San Marino"
+          },
+          {
+            "localizedValue": "Sao Tome and Principe"
+          },
+          {
+            "localizedValue": "Saudi Arabia"
+          },
+          {
+            "localizedValue": "Senegal"
+          },
+          {
+            "localizedValue": "Serbia"
+          },
+          {
+            "localizedValue": "Seychelles"
+          },
+          {
+            "localizedValue": "Sierra Leone"
+          },
+          {
+            "localizedValue": "Singapore"
+          },
+          {
+            "localizedValue": "Slovakia"
+          },
+          {
+            "localizedValue": "Slovenia"
+          },
+          {
+            "localizedValue": "Solomon Islands"
+          },
+          {
+            "localizedValue": "Somalia"
+          },
+          {
+            "localizedValue": "South Africa"
+          },
+          {
+            "localizedValue": "South Georgia and the South Sandwich Islands"
+          },
+          {
+            "localizedValue": "Spain"
+          },
+          {
+            "localizedValue": "Sri Lanka"
+          },
+          {
+            "localizedValue": "Suriname"
+          },
+          {
+            "localizedValue": "Svalbard and Jan Mayen"
+          },
+          {
+            "localizedValue": "Sweden"
+          },
+          {
+            "localizedValue": "Switzerland"
+          },
+          {
+            "localizedValue": "Taiwan"
+          },
+          {
+            "localizedValue": "Tajikistan"
+          },
+          {
+            "localizedValue": "Tanzania, United Republic of"
+          },
+          {
+            "localizedValue": "Thailand"
+          },
+          {
+            "localizedValue": "Togo"
+          },
+          {
+            "localizedValue": "Tokelau"
+          },
+          {
+            "localizedValue": "Tonga"
+          },
+          {
+            "localizedValue": "Trinidad and Tobago"
+          },
+          {
+            "localizedValue": "Tunisia"
+          },
+          {
+            "localizedValue": "Türkiye"
+          },
+          {
+            "localizedValue": "Turkmenistan"
+          },
+          {
+            "localizedValue": "Turks and Caicos Islands"
+          },
+          {
+            "localizedValue": "Tuvalu"
+          },
+          {
+            "localizedValue": "Uganda"
+          },
+          {
+            "localizedValue": "Ukraine"
+          },
+          {
+            "localizedValue": "United Arab Emirates"
+          },
+          {
+            "localizedValue": "United Kingdom"
+          },
+          {
+            "localizedValue": "United States"
+          },
+          {
+            "localizedValue": "Unknown"
+          },
+          {
+            "localizedValue": "Uruguay"
+          },
+          {
+            "localizedValue": "Uzbekistan"
+          },
+          {
+            "localizedValue": "Vanuatu"
+          },
+          {
+            "localizedValue": "Venezuela"
+          },
+          {
+            "localizedValue": "Vietnam"
+          },
+          {
+            "localizedValue": "Virgin Islands, British"
+          },
+          {
+            "localizedValue": "Virgin Islands, U S"
+          },
+          {
+            "localizedValue": "Wallis and Futuna"
+          },
+          {
+            "localizedValue": "Western Sahara"
+          },
+          {
+            "localizedValue": "Yemen"
+          },
+          {
+            "localizedValue": "Zambia"
+          },
+          {
+            "localizedValue": "Zimbabwe"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Material",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Canvas"
+          },
+          {
+            "localizedValue": "Glass"
+          },
+          {
+            "localizedValue": "Hard Shell"
+          },
+          {
+            "localizedValue": "Leather"
+          },
+          {
+            "localizedValue": "Metal"
+          },
+          {
+            "localizedValue": "Neoprene"
+          },
+          {
+            "localizedValue": "Nylon"
+          },
+          {
+            "localizedValue": "Plastic"
+          },
+          {
+            "localizedValue": "Polyester"
+          },
+          {
+            "localizedValue": "Rigid Plastic"
+          },
+          {
+            "localizedValue": "Silicone/Gel/Rubber"
+          },
+          {
+            "localizedValue": "Suede"
+          },
+          {
+            "localizedValue": "Synthetic Leather"
+          },
+          {
+            "localizedValue": "Synthetic Suede"
+          },
+          {
+            "localizedValue": "Vinyl"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Maximum Number of Players",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": false
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "1"
+          },
+          {
+            "localizedValue": "2"
+          },
+          {
+            "localizedValue": "3"
+          },
+          {
+            "localizedValue": "4"
+          },
+          {
+            "localizedValue": "6"
+          },
+          {
+            "localizedValue": "8"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "MPN",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        }
+      },
+      {
+        "localizedAspectName": "Number of Fans",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "RECOMMENDED",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "1"
+          },
+          {
+            "localizedValue": "2"
+          },
+          {
+            "localizedValue": "3"
+          },
+          {
+            "localizedValue": "4"
+          },
+          {
+            "localizedValue": "5"
+          },
+          {
+            "localizedValue": "6"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Personalize",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "SELECTION_ONLY",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": false,
+          "aspectApplicableTo": [
+            "ITEM"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Yes"
+          },
+          {
+            "localizedValue": "No"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Features",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Anti-Scratch"
+          },
+          {
+            "localizedValue": "Built-In Track Ball"
+          },
+          {
+            "localizedValue": "Built-in Track Pad"
+          },
+          {
+            "localizedValue": "Clips on Controller"
+          },
+          {
+            "localizedValue": "Dustproof"
+          },
+          {
+            "localizedValue": "Ergonomic"
+          },
+          {
+            "localizedValue": "Glossy"
+          },
+          {
+            "localizedValue": "Matte/Anti-Glare"
+          },
+          {
+            "localizedValue": "Mirror"
+          },
+          {
+            "localizedValue": "Padded"
+          },
+          {
+            "localizedValue": "Partitions"
+          },
+          {
+            "localizedValue": "Tinted"
+          },
+          {
+            "localizedValue": "Washable"
+          },
+          {
+            "localizedValue": "Water-Resistant"
+          },
+          {
+            "localizedValue": "Wheels"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Item Weight",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true
+        }
+      },
+      {
+        "localizedAspectName": "Manufacturer Warranty",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "ITEM"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "1 Month"
+          },
+          {
+            "localizedValue": "3 Months"
+          },
+          {
+            "localizedValue": "6 Months"
+          },
+          {
+            "localizedValue": "9 Months"
+          },
+          {
+            "localizedValue": "1 Year"
+          },
+          {
+            "localizedValue": "2 Years"
+          },
+          {
+            "localizedValue": "3 Years"
+          },
+          {
+            "localizedValue": "4 Years"
+          },
+          {
+            "localizedValue": "5 Years"
+          },
+          {
+            "localizedValue": "10 Years"
+          },
+          {
+            "localizedValue": "Lifetime"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Model",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Hori D-Pad"
+          },
+          {
+            "localizedValue": "Logitech Driving Force GT"
+          },
+          {
+            "localizedValue": "Logitech G27"
+          },
+          {
+            "localizedValue": "Logitech G29"
+          },
+          {
+            "localizedValue": "Logitech G920"
+          },
+          {
+            "localizedValue": "Logitech G923 Trueforce"
+          },
+          {
+            "localizedValue": "Logitech Gamepad F310"
+          },
+          {
+            "localizedValue": "Microsoft Xbox 360"
+          },
+          {
+            "localizedValue": "Microsoft Xbox One Elite"
+          },
+          {
+            "localizedValue": "Microsoft Xbox One - Original"
+          },
+          {
+            "localizedValue": "Next Level Racing GTUltimate V2"
+          },
+          {
+            "localizedValue": "Next Level Racing NLR-S004"
+          },
+          {
+            "localizedValue": "Nintendo 64"
+          },
+          {
+            "localizedValue": "Nintendo Joy-Con"
+          },
+          {
+            "localizedValue": "Nintendo Super Smash Bros Ultimate Edition"
+          },
+          {
+            "localizedValue": "Nintendo Switch Pro Controller"
+          },
+          {
+            "localizedValue": "Nintendo Wii - Original"
+          },
+          {
+            "localizedValue": "Nintendo Wii U Pro"
+          },
+          {
+            "localizedValue": "Playseat Challenge Racing Seat"
+          },
+          {
+            "localizedValue": "Razer Kishi"
+          },
+          {
+            "localizedValue": "Razer Raiju Pro"
+          },
+          {
+            "localizedValue": "Razer Wolverine V2"
+          },
+          {
+            "localizedValue": "Saitek PRO Flight Rudder Pedals"
+          },
+          {
+            "localizedValue": "Sony Access"
+          },
+          {
+            "localizedValue": "Sony DualSense"
+          },
+          {
+            "localizedValue": "Sony DualSense Edge"
+          },
+          {
+            "localizedValue": "Sony Playstation DualShock"
+          },
+          {
+            "localizedValue": "Sony Playstation DualShock 2"
+          },
+          {
+            "localizedValue": "Sony Playstation DualShock 3"
+          },
+          {
+            "localizedValue": "Sony Playstation DualShock 4"
+          },
+          {
+            "localizedValue": "Sony Playstation Dualshock 4 V2"
+          },
+          {
+            "localizedValue": "Sony Playstation Move"
+          },
+          {
+            "localizedValue": "SteelSeries Nimbus"
+          },
+          {
+            "localizedValue": "Thrustmaster Classic D-pad"
+          },
+          {
+            "localizedValue": "Thrustmaster Classic mini-stick"
+          },
+          {
+            "localizedValue": "Thrustmaster Ferrari 458 Spider"
+          },
+          {
+            "localizedValue": "Thrustmaster Hotas Warthog"
+          },
+          {
+            "localizedValue": "Thrustmaster T300RS GT Edition"
+          },
+          {
+            "localizedValue": "Thrustmaster TCA Officer Pack Airbus Edition"
+          },
+          {
+            "localizedValue": "Thrustmaster TCA Quadrant Airbus Edition"
+          },
+          {
+            "localizedValue": "Thrustmaster TCA Sidestick Airbus Edition"
+          },
+          {
+            "localizedValue": "Thrustmaster T-GT"
+          },
+          {
+            "localizedValue": "Thrustmaster TH8A "
+          },
+          {
+            "localizedValue": "Thrustmaster TM Flying Clamp"
+          },
+          {
+            "localizedValue": "Xbox Elite Series 2"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Personalization Instructions",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": false,
+          "aspectMaxLength": 200,
+          "aspectApplicableTo": [
+            "ITEM"
+          ]
+        }
+      },
+      {
+        "localizedAspectName": "Platform",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "MULTI",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "PRODUCT"
+          ]
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Android"
+          },
+          {
+            "localizedValue": "Atari 2600"
+          },
+          {
+            "localizedValue": "Microsoft Xbox"
+          },
+          {
+            "localizedValue": "Microsoft Xbox 360"
+          },
+          {
+            "localizedValue": "Microsoft Xbox One"
+          },
+          {
+            "localizedValue": "Microsoft Xbox Series X|S"
+          },
+          {
+            "localizedValue": "Nintendo 3DS"
+          },
+          {
+            "localizedValue": "Nintendo 64"
+          },
+          {
+            "localizedValue": "Nintendo DS"
+          },
+          {
+            "localizedValue": "Nintendo Game Boy"
+          },
+          {
+            "localizedValue": "Nintendo Game Boy Advance"
+          },
+          {
+            "localizedValue": "Nintendo Game Boy Color"
+          },
+          {
+            "localizedValue": "Nintendo GameCube"
+          },
+          {
+            "localizedValue": "Nintendo NES"
+          },
+          {
+            "localizedValue": "Nintendo SNES"
+          },
+          {
+            "localizedValue": "Nintendo Switch"
+          },
+          {
+            "localizedValue": "Nintendo Wii"
+          },
+          {
+            "localizedValue": "Nintendo Wii U"
+          },
+          {
+            "localizedValue": "PC"
+          },
+          {
+            "localizedValue": "Sega Dreamcast"
+          },
+          {
+            "localizedValue": "Sega Genesis"
+          },
+          {
+            "localizedValue": "Sony PlayStation 1"
+          },
+          {
+            "localizedValue": "Sony PlayStation 2"
+          },
+          {
+            "localizedValue": "Sony PlayStation 3"
+          },
+          {
+            "localizedValue": "Sony PlayStation 4"
+          },
+          {
+            "localizedValue": "Sony PlayStation 5"
+          },
+          {
+            "localizedValue": "Sony PlayStation Vita"
+          },
+          {
+            "localizedValue": "Sony PSP"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Unit Quantity",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true,
+          "aspectApplicableTo": [
+            "ITEM"
+          ]
+        }
+      },
+      {
+        "localizedAspectName": "Unit Type",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Unit"
+          },
+          {
+            "localizedValue": "oz"
+          },
+          {
+            "localizedValue": "lb"
+          },
+          {
+            "localizedValue": "fl oz"
+          },
+          {
+            "localizedValue": "gal"
+          },
+          {
+            "localizedValue": "ft"
+          },
+          {
+            "localizedValue": "ft²"
+          },
+          {
+            "localizedValue": "ft³"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Wireless Range",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": true
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "Less Than 5 m"
+          },
+          {
+            "localizedValue": "5-10 m"
+          },
+          {
+            "localizedValue": "More Than 10 m"
+          }
+        ]
+      },
+      {
+        "localizedAspectName": "Year Manufactured",
+        "aspectConstraint": {
+          "aspectDataType": "STRING",
+          "itemToAspectCardinality": "SINGLE",
+          "aspectMode": "FREE_TEXT",
+          "aspectRequired": false,
+          "aspectUsage": "OPTIONAL",
+          "aspectEnabledForVariations": false
+        },
+        "aspectValues": [
+          {
+            "localizedValue": "1900s"
+          },
+          {
+            "localizedValue": "1910s"
+          },
+          {
+            "localizedValue": "1920s"
+          },
+          {
+            "localizedValue": "1930s"
+          },
+          {
+            "localizedValue": "1940s"
+          },
+          {
+            "localizedValue": "1950s"
+          },
+          {
+            "localizedValue": "1960s"
+          },
+          {
+            "localizedValue": "1970s"
+          },
+          {
+            "localizedValue": "1980s"
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,29 @@
+{
+    "listingId": "110561588442"
+}
+
+{
+  "offerId": "9293376010"
+}
+
+{
+    "sku": "ps5con",
+    "marketplaceId": "EBAY_US",
+    "format": "FIXED_PRICE",
+    "listingDuration" : "GTC",
+    "availableQuantity": 10,
+    "listingPolicies" :
+    {
+        "fulfillmentPolicyId" : "6207768000",
+        "paymentPolicyId" : "6207766000",
+        "returnPolicyId" : "6207767000"
+    },
+    "pricingSummary": {
+        "price": {
+            "value": 100,
+            "currency": "USD"
+        }
+    },
+    "categoryId": "117042",
+    "merchantLocationKey": "loc1"
+}

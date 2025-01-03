@@ -1,0 +1,35 @@
+{
+  "categoryTypes": [
+    {
+      "name": "ALL_EXCLUDING_MOTORS_VEHICLES"
+    }
+  ],
+  "description": "Initial Fulfillment Policy",
+  "marketplaceId": "EBAY_US",
+  "name": "fulfillment_policy",
+  "shippingOptions": [
+    {
+      "costType": "FLAT_RATE",
+      "optionType": "DOMESTIC",
+      "shippingServices": [
+        {
+          "shippingCarrierCode": "USPS",
+          "shippingServiceCode": "USPSPriority",
+          "shippingCost": {
+            "currency": "USD",
+            "value": "10.00"
+          }
+        }
+      ]
+    }
+  ],
+  "handlingTime": {
+    "unit": "DAY",
+    "value": 1
+  }
+}
+
+{
+  "fulfillmentPolicyId": "6207768000",
+  "Sandy": "6207772000"
+}

@@ -1,0 +1,14 @@
+loc1
+
+{
+    "location": {
+      "address": {
+        "addressLine1": "2055 Hamilton Ave",
+        "addressLine2": "Building 3",
+        "city": "San Jose",
+        "stateOrProvince": "CA",
+        "postalCode": "95008",
+        "country": "US"
+      }
+    }
+}

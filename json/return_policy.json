@@ -1,0 +1,17 @@
+{
+  "categoryTypes": [
+    {
+      "name": "ALL_EXCLUDING_MOTORS_VEHICLES"
+    }
+  ],
+  "description": "Initial Return Policy",
+  "marketplaceId": "EBAY_US",
+  "name": "return_policy",
+  "returnsAccepted": "false"
+}
+
+{
+  "returnPolicyId": "6207767000"
+}
+
+Sandy: 6207771000

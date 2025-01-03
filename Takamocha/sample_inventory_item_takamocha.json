@@ -1,0 +1,21 @@
+{
+    "product": {
+        "title": "takamocha t-shirt",
+        "aspects": {
+            "Size": ["S"],
+            "Brand": ["Hunter"],
+            "Size Type": ["Regular"],
+            "Color": ["Black"],
+            "Department": ["Men"]
+        },
+        "description": "Comfortable, soft, and stylish t-shirt",
+        "imageUrls": [
+            "https://i.ebayimg.com/images/g/g0kAAOSwnaNnN6Kn/s-l960.jpg"]
+    },
+    "condition": "NEW",
+    "availability": {
+        "shipToLocationAvailability": {
+            "quantity": 10
+        }
+    }
+}

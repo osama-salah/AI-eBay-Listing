@@ -1,0 +1,34 @@
+{
+    "phone": "+13028312792",
+    "location": {
+      "address": {
+        "addressLine1": "2055 Hamilton Ave",
+        "addressLine2": "Building 3",
+        "city": "San Jose",
+        "stateOrProvince": "CA",
+        "postalCode": "95008",
+        "country": "US"
+      },
+      "geoCoordinates": {
+        "latitude": 33.089805,
+        "longitude": -88.709822
+      }
+    },
+    "locationTypes": [
+      "WAREHOUSE"
+    ],
+    "operatingHours": [
+      {
+        "intervals": [
+          {
+            "open": "08:00:00",
+            "close": "23:00:00"
+          }
+        ],
+        "dayOfWeekEnum": "MONDAY"
+      }
+    ],
+    "timeZoneId": "America/Chicago",
+    "merchantLocationKey": "loc1",
+    "merchantLocationStatus": "ENABLED"
+  }

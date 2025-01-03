@@ -9,17 +9,13 @@ from lib.session import save_session_state, load_session_state, logout
 # Check if navigation_radio is set in session state
 refresh_navigation_radio = st.session_state.navigation_radio if 'navigation_radio' in st.session_state else None
 
-# Load state
+# Load state (without navigation_radio)
 print("Loading session state")
 load_session_state()
 
-# Restore refresh navigation radio if it exists
+# Restore navigation radio if it exists
 if refresh_navigation_radio:
     st.session_state.navigation_radio = refresh_navigation_radio
-
-# # Restore last selected page from session state if it exists
-# if 'last_page' in st.session_state:
-#     st.session_state.page = st.session_state.last_page
 
 # Set the page configuration
 st.set_page_config(page_title="eBay Listing App", page_icon=":mag:", layout="centered")
@@ -92,7 +88,7 @@ if not ebay_production.user_token:
         else:
             st.session_state.auth_state = 'auth_waiting'
 
-save_session_state()
+# save_session_state()
 
 with st.sidebar:
     print(f'navigation_radio 1: {st.session_state.get("navigation_radio", "Home")}')
@@ -106,7 +102,7 @@ with st.sidebar:
     
     print(f'navigation_radio 2: {st.session_state.navigation_radio}')
 
-save_session_state()
+# save_session_state()
 
 if st.session_state.navigation_radio == "Home":
     print("Displaying Home page")

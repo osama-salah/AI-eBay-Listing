@@ -1,0 +1,13 @@
+{
+    "product": {
+        "title": "play station 5 controller",
+        "aspects": {
+            "Type": ["Controller"],
+            "Brand": ["Sony"]
+        },
+        "description": "This is a red Sony PlayStation 5 DualSense Wireless Controller. It is a wireless controller designed for use with the PlayStation 5 console.",
+        "imageUrls": [
+            "https://i.ebayimg.com/images/g/sUgAAOSw~SVnbxot/s-l1600.jpg"]
+    },
+    "condition": "NEW"
+}
