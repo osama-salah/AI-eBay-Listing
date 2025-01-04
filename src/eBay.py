@@ -66,7 +66,7 @@ class EbayAPI:
         response = requests.post(endpoint, headers=headers, data=data)
 
         try:
-            self.app_token = response.json()['access_token']
+            self.app_token = response.json()
             return self.app_token
         except KeyError as e:
             print(f"Error getting app token from: {response.json()}")
@@ -164,17 +164,16 @@ class EbayAPI:
         Get category suggestions for a given query
         
         Args:
-            app_token (str): Application OAuth token
             query (str): Search query for category suggestions
             marketplace_id (str): Target marketplace ID
         """
         endpoint = "https://api.ebay.com/commerce/taxonomy/v1/category_tree/0/get_category_suggestions"
 
-        if not self.user_token:
-            raise ValueError("User token is required.")    
+        if not self.app_token:
+            raise ValueError("Production app token is required.")    
         
         headers = {
-            "Authorization": f"Bearer {self.user_token['access_token']}",
+            "Authorization": f"Bearer {self.app_token['access_token']}",
             "Accept": "application/json",
         }
         
@@ -206,7 +205,7 @@ if __name__ == "__main__":
     sandbox_creds = EbayAPI.load_credentials(env='sandbox')
     ebay_sandbox = EbayAPI(**sandbox_creds)
 
-    # Get application token (sandox)
+    # Get application token (sandbox)
     print("Getting sandbox application token...")
     app_token_sandbox = ebay_sandbox.get_app_token(env='sandbox')
 
@@ -215,7 +214,7 @@ if __name__ == "__main__":
     ebay_production = EbayAPI(**production_creds)
 
     # Get application token (production)
-    app_token = ebay_production.get_app_token()
+    ebay_production.get_app_token()
 
     scopes_production = ["https://api.ebay.com/oauth/api_scope", "https://api.ebay.com/oauth/api_scope/sell.marketing.readonly", "https://api.ebay.com/oauth/api_scope/sell.marketing", "https://api.ebay.com/oauth/api_scope/sell.inventory.readonly", "https://api.ebay.com/oauth/api_scope/sell.inventory", "https://api.ebay.com/oauth/api_scope/sell.account.readonly", "https://api.ebay.com/oauth/api_scope/sell.account", "https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly", "https://api.ebay.com/oauth/api_scope/sell.fulfillment", "https://api.ebay.com/oauth/api_scope/sell.analytics.readonly", "https://api.ebay.com/oauth/api_scope/sell.finances", "https://api.ebay.com/oauth/api_scope/sell.payment.dispute", "https://api.ebay.com/oauth/api_scope/commerce.identity.readonly", "https://api.ebay.com/oauth/api_scope/sell.reputation", "https://api.ebay.com/oauth/api_scope/sell.reputation.readonly", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly", "https://api.ebay.com/oauth/api_scope/sell.stores", "https://api.ebay.com/oauth/api_scope/sell.stores.readonly", "https://api.ebay.com/oauth/scope/sell.edelivery"]
     scopes_sandbox =    ["https://api.ebay.com/oauth/api_scope", "https://api.ebay.com/oauth/api_scope/buy.order.readonly", "https://api.ebay.com/oauth/api_scope/buy.guest.order", "https://api.ebay.com/oauth/api_scope/sell.marketing.readonly", "https://api.ebay.com/oauth/api_scope/sell.marketing", "https://api.ebay.com/oauth/api_scope/sell.inventory.readonly", "https://api.ebay.com/oauth/api_scope/sell.inventory", "https://api.ebay.com/oauth/api_scope/sell.account.readonly", "https://api.ebay.com/oauth/api_scope/sell.account", "https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly", "https://api.ebay.com/oauth/api_scope/sell.fulfillment", "https://api.ebay.com/oauth/api_scope/sell.analytics.readonly", "https://api.ebay.com/oauth/api_scope/sell.marketplace.insights.readonly", "https://api.ebay.com/oauth/api_scope/commerce.catalog.readonly", "https://api.ebay.com/oauth/api_scope/buy.shopping.cart", "https://api.ebay.com/oauth/api_scope/buy.offer.auction", "https://api.ebay.com/oauth/api_scope/commerce.identity.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.email.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.phone.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.address.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.name.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.status.readonly", "https://api.ebay.com/oauth/api_scope/sell.finances", "https://api.ebay.com/oauth/api_scope/sell.payment.dispute", "https://api.ebay.com/oauth/api_scope/sell.item.draft", "https://api.ebay.com/oauth/api_scope/sell.item", "https://api.ebay.com/oauth/api_scope/sell.reputation", "https://api.ebay.com/oauth/api_scope/sell.reputation.readonly", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly", "https://api.ebay.com/oauth/api_scope/sell.stores", "https://api.ebay.com/oauth/api_scope/sell.stores.readonly"]
@@ -240,7 +239,7 @@ if __name__ == "__main__":
     # After production user authorizes and you get the code from callback URL  
     auth_code = unquote(input("Enter the code from the redirect URL: "))
     production_user_token = ebay_production.get_user_token(auth_code)
-    print("Successfully retrieved prduction user token." if 'access_token' in production_user_token else "Failed to retrieve user token.")    
+    print("Successfully retrieved production user token." if 'access_token' in production_user_token else "Failed to retrieve production user token.")    
 
     # Get category suggestions
     suggestions = ebay_production.get_category_suggestions('IPhone 15')

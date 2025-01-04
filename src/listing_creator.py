@@ -2,7 +2,7 @@ import json
 import requests
 import streamlit as st
 from itertools import product
-from lib.session import save_session_state
+from lib.session import load_session_state
 
 
 # Initialize session state variables
@@ -59,17 +59,13 @@ def create_listing_form():
 def display_suggestions(categories=None):
     if not categories:
         search_query = f"{st.session_state.title} {st.session_state.manufacturer}".strip()
-        # Retieve eBay production client from session state
-        ebay_production = st.session_state.ebay_production
-
         # Verify ebay_production has a valid user token
-        if not ebay_production.user_token:
+        if not st.session_state.ebay_production.app_token:
             st.error("User token is not available. Please log in.")
-            print(f'ebay_production.user_token: {ebay_production.user_token}')
             return
 
         try:
-            suggestions = ebay_production.get_category_suggestions(search_query)
+            suggestions = st.session_state.ebay_production.get_category_suggestions(search_query)
         except ValueError as ve:
             st.error(f"Error: {ve}")
             return
