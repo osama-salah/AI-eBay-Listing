@@ -189,12 +189,19 @@ class EbayAPI:
         tree = ET.parse(config_file)
         root = tree.getroot()
         
-        environment = root.find(env)
+        # environment = root.find(env)
+        # creds = {
+        #     'client_id': environment.find('client_id').text,
+        #     'client_secret': environment.find('client_secret').text,
+        #     'dev_id': environment.find('dev_id').text,
+        #     'ru_name': environment.find('ru_name').text
+        # }
+        # Load credentials from secrets manager for production/sandbox
         creds = {
-            'client_id': environment.find('client_id').text,
-            'client_secret': environment.find('client_secret').text,
-            'dev_id': environment.find('dev_id').text,
-            'ru_name': environment.find('ru_name').text
+                'client_id': st.secrets[f'{env}-credentials']['client_id'],
+                'client_secret': st.secrets[f'{env}-credentials']['client_secret'],
+                'dev_id': st.secrets['dev_id'],
+                'ru_name': st.secrets[f'{env}-credentials']['ru_name']
         }
             
         return creds
