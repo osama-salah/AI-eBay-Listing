@@ -2,6 +2,9 @@ import json
 import requests
 import streamlit as st
 from itertools import product
+
+import sys
+sys.path.append('lib')
 from lib.session import load_session_state
 
 
