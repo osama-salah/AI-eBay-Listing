@@ -183,3 +183,6 @@ config/ebay_credentials.xml
 
 # Streamlit container
 .devcontainer/
+
+# PyCharm project data
+.idea/
