@@ -4,9 +4,12 @@ import streamlit as st
 from itertools import product
 
 import sys
-sys.path.append('lib')
-from lib.session import load_session_state
+import os
 
+# Add the project root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from lib.session import load_session_state
 
 # Initialize session state variables
 rerun_flag = False

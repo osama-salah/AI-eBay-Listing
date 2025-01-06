@@ -9,6 +9,12 @@ from urllib.parse import unquote
 from page_template import header, footer
 from listing_creator import create_listing_form
 from eBay import EbayAPI
+
+import sys
+import os
+
+# Add the project root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from lib.session import save_session_state, load_session_state, logout
 
 SANDBOX_ENABLE = True
