@@ -116,7 +116,6 @@ def authorize_client(env='production'):
         # In the authorize_client function, replace the redirect code with:
         st.link_button("Click to authenticate with eBay", auth_url)
 
-        st.info("Please complete the authentication in the new tab that opened. Once done, return to this window.")
         st.session_state['auth_state'] = 'auth_waiting'
         return
 
