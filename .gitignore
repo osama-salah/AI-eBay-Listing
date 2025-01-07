@@ -186,3 +186,6 @@ config/ebay_credentials.xml
 
 # PyCharm project data
 .idea/
+
+# Session state pickle file
+session_state.pkl
