@@ -1,3 +1,7 @@
+# Add these imports at the top
+from streamlit.web.server.server import Server
+import streamlit.components.v1 as components
+
 from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse
 from threading import Thread
@@ -39,6 +43,15 @@ if "code" in st.query_params:
 if refresh_navigation_radio:
     st.session_state.navigation_radio = refresh_navigation_radio
 # Set the page configuration
+
+# Add this configuration before st.set_page_config
+Server.get_current()._get_websocket_headers = lambda: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Set-Cookie": "SameSite=None; Secure"
+}
+
 st.set_page_config(page_title="eBay Listing App", page_icon=":mag:", layout="centered")
 
 # Load CSS styles
