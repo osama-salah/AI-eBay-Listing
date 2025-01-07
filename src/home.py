@@ -16,6 +16,12 @@ import os
 # Add the project root directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from lib.session import save_session_state, load_session_state, logout
+
+import io
+# Capture the output
+output = io.StringIO()
+sys.stdout = output
+
 SANDBOX_ENABLE = True
 
 # Check if navigation_radio is set in session state
@@ -182,3 +188,8 @@ footer()
 
 save_session_state()
 
+# Reset sys.stdout to its default
+sys.stdout = sys.__stdout__
+
+# Display the captured output in the Streamlit app
+st.text(output.getvalue())
