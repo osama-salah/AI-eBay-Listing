@@ -110,10 +110,11 @@ def authorize_client(env='production'):
 
         print(f"Getting {env} authorization URL...")
         auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
-
         # Open auth URL
         print('Opening auth URL')
-        st.markdown(f'<meta http-equiv="refresh" content="0;url={auth_url}">', unsafe_allow_html=True)
+        js = f"""<script>window.open("{auth_url}", "_blank");</script>"""
+        components.html(js, height=0)
+        st.info("Please complete the authentication in the new tab that opened. Once done, return to this window.")
         st.session_state['auth_state'] = 'auth_waiting'
 
     if st.session_state.get('auth_state') != 'authorized':      
