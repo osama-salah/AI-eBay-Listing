@@ -112,11 +112,10 @@ def authorize_client(env='production'):
         auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
         # Open auth URL
         print('Opening auth URL')
-        js = f"""<script>window.open("{auth_url}", "_blank");</script>"""
+        js = f"""<script>window.location.href = "{auth_url}";</script>"""
         components.html(js, height=0)
         st.info("Please complete the authentication in the new tab that opened. Once done, return to this window.")
         st.session_state['auth_state'] = 'auth_waiting'
-
     if st.session_state.get('auth_state') != 'authorized':      
         if st.session_state.callback_auth_code:
             print('Getting user token...')
@@ -179,7 +178,9 @@ else:
         st.session_state.auth_state = 'authorize'
         
         print('Logging in...')
-    
+        
+        js = f"""<script>window.location.href = "{auth_url}";</script>"""
+        components.html(js, height=0)
     st.write(":red[Please log in to access the application.]")
 
 
