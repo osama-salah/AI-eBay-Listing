@@ -26,6 +26,7 @@ load_session_state()
 # Add after loading session state
 if "code" in st.query_params:
     st.session_state.callback_auth_code = st.query_params["code"]
+    print('Received callback auth code')
     save_session_state()
     
 # Restore navigation radio if it exists
@@ -82,6 +83,7 @@ def authorize_client(env='production'):
         auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
 
         # Open auth URL
+        print('Opening auth URL')
         st.markdown(f'<meta http-equiv="refresh" content="0;url={auth_url}">', unsafe_allow_html=True)
         st.session_state['auth_state'] = 'auth_waiting'
 
