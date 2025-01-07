@@ -1,5 +1,3 @@
-# Add these imports at the top
-from streamlit.web.server.server import Server
 import streamlit.components.v1 as components
 
 from fastapi import FastAPI, Request
@@ -44,15 +42,27 @@ if refresh_navigation_radio:
     st.session_state.navigation_radio = refresh_navigation_radio
 # Set the page configuration
 
-# Add this configuration before st.set_page_config
-Server.get_current()._get_websocket_headers = lambda: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    "Set-Cookie": "SameSite=None; Secure"
-}
+st.set_page_config(
+    page_title="eBay Listing App",
+    page_icon=":mag:",
+    layout="centered",
+    initial_sidebar_state="auto",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
+)
 
-st.set_page_config(page_title="eBay Listing App", page_icon=":mag:", layout="centered")
+# Set cookie settings in the frontend
+components.html(
+    """
+    <script>
+        document.cookie = "SameSite=None; Secure";
+    </script>
+    """,
+    height=0
+)
 
 # Load CSS styles
 with open('static/css/styles.css') as f:
