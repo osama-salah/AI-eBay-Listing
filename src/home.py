@@ -178,9 +178,7 @@ else:
         st.session_state.auth_state = 'authorize'
         
         print('Logging in...')
-        
-        js = f"""<script>window.location.href = "{auth_url}";</script>"""
-        components.html(js, height=0)
+    
     st.write(":red[Please log in to access the application.]")
 
 
