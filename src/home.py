@@ -118,6 +118,8 @@ def authorize_client(env='production'):
 
         st.info("Please complete the authentication in the new tab that opened. Once done, return to this window.")
         st.session_state['auth_state'] = 'auth_waiting'
+        return
+
     if st.session_state.get('auth_state') != 'authorized':      
         if st.session_state.callback_auth_code:
             print('Getting user token...')
