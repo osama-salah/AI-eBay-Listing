@@ -20,7 +20,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from lib.session import save_session_state, load_session_state, logout
 
 import io
-# Capture the output
+# Capture the output of print statements
 output = io.StringIO()
 sys.stdout = output
 
@@ -35,6 +35,9 @@ load_session_state()
 if "code" in st.query_params:
     st.session_state.callback_auth_code = st.query_params["code"]
     print('Received callback auth code')
+    st.experimental_set_query_params()
+    # del st.query_params["code"]
+    # st.switch_page("src/home.py")
     save_session_state()
     
 # Restore navigation radio if it exists
@@ -55,6 +58,7 @@ st.set_page_config(
 )
 
 # Set cookie settings in the frontend
+# TODO: Remove this
 components.html(
     """
     <script>
@@ -126,6 +130,7 @@ def authorize_client(env='production'):
             if st.session_state.ebay_client.user_token['access_token']:
                 print(f"{env}: Authorization successful")
                 st.session_state['auth_state'] = 'authorized'
+                # del st.query_params['code']                
 
                 save_session_state()
                 st.rerun()
