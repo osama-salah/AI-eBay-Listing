@@ -35,9 +35,11 @@ load_session_state()
 if "code" in st.query_params:
     st.session_state.callback_auth_code = st.query_params["code"]
     print('Received callback auth code')
-    # st.experimental_set_query_params()
+
+    # Remove the query parameters from the URL
     del st.query_params["code"]
-    # st.switch_page("src/home.py")
+    del st.query_params["expires_in"]
+
     save_session_state()
     
 # Restore navigation radio if it exists
