@@ -59,17 +59,6 @@ st.set_page_config(
     }
 )
 
-# Set cookie settings in the frontend
-# TODO: Remove this
-components.html(
-    """
-    <script>
-        document.cookie = "SameSite=None; Secure";
-    </script>
-    """,
-    height=0
-)
-
 # Load CSS styles
 with open('static/css/styles.css') as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -187,9 +176,7 @@ else:
         # logout()
         st.session_state.auth_state = 'authorize'
         
-        print('Logging in...')
-        
-
+        print('Logging in...')        
 
 # Start client authorization flow if auth_state is 'authorize'
 if st.session_state.get('auth_state') == 'authorize' or st.session_state.get('auth_state') == 'auth_waiting':

@@ -13,7 +13,7 @@ def footer():
     st.markdown("""
         <hr>
         <div style="text-align: center; padding: 10px;">
-            <p>&copy; 2024 eBay AI Listing Creator. All rights reserved.</p>
+            <p>&copy; 2025 eBay AI Listing Creator. All rights reserved.</p>
         </div>
     """, unsafe_allow_html=True)
 
