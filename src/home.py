@@ -114,8 +114,6 @@ def authorize_client(env='production'):
         print('Opening auth URL')
         
         st.link_button("Click to authenticate with eBay", auth_url)
-
-        st.session_state['auth_state'] = 'auth_waiting'
         return
 
     if st.session_state.get('auth_state') != 'authorized':      
