@@ -35,8 +35,8 @@ load_session_state()
 if "code" in st.query_params:
     st.session_state.callback_auth_code = st.query_params["code"]
     print('Received callback auth code')
-    st.experimental_set_query_params()
-    # del st.query_params["code"]
+    # st.experimental_set_query_params()
+    del st.query_params["code"]
     # st.switch_page("src/home.py")
     save_session_state()
     
