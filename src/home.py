@@ -112,11 +112,10 @@ def authorize_client(env='production'):
         auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
         # Open auth URL
         print('Opening auth URL')
-
+        
+        st.link_button("Click to authenticate with eBay", auth_url)
         st.session_state['auth_state'] = 'auth_waiting'
 
-        st.session_state['auth_state'] = 'auth_waiting'
-                
         return
 
     if st.session_state.get('auth_state') != 'authorized':      
