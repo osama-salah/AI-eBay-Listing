@@ -112,8 +112,11 @@ def authorize_client(env='production'):
         auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
         # Open auth URL
         print('Opening auth URL')
-        
-        st.link_button("Click to authenticate with eBay", auth_url)
+
+        st.session_state['auth_state'] = 'auth_waiting'
+
+        st.session_state['auth_state'] = 'auth_waiting'
+                
         return
 
     if st.session_state.get('auth_state') != 'authorized':      
@@ -171,6 +174,7 @@ if st.session_state.ebay_client.user_token and st.session_state.ebay_production.
         logout()
 else:
     print("User not logged in")
+    st.write(":red[Please log in to access the application.]")
     # Display login button
     if st.button("Login"):
         # Clear any log in session state
@@ -178,8 +182,7 @@ else:
         st.session_state.auth_state = 'authorize'
         
         print('Logging in...')
-    
-    st.write(":red[Please log in to access the application.]")
+        
 
 
 # Start client authorization flow if auth_state is 'authorize'
