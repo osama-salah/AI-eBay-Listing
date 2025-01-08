@@ -184,18 +184,58 @@ class EbayAPI:
         response = requests.get(endpoint, headers=headers, params=params)
         return response.json()
 
+    def get_category_aspects(self, category_id, marketplace_id="EBAY_US"):
+        """
+        Get required aspects for a specific category
+        
+        Args:
+            category_id (str): The category ID to get aspects for
+            marketplace_id (str): Target marketplace ID
+            
+        Returns:
+            list: List of dictionaries containing aspect details (name, type, values)
+        """
+        endpoint = f"https://api.ebay.com/commerce/catalog/v1_beta/get_item_aspects_for_category"
+        
+        if not self.app_token:
+            raise ValueError("App token is required.")
+            
+        headers = {
+            "Authorization": f"Bearer {self.app_token['access_token']}",
+            "Content-Type": "application/json",
+            "X-EBAY-C-MARKETPLACE-ID": marketplace_id
+        }
+        
+        params = {
+            "category_id": category_id,
+            "aspect_metadata": "true"
+        }
+        
+        response = requests.get(endpoint, headers=headers, params=params)
+        
+        if response.status_code != 200:
+            raise Exception(f"Failed to get aspects: {response.text}")
+            
+        aspects_data = response.json()
+        
+        # List of required aspects 
+        requied_aspects = []
+        
+        for aspect in aspects_data.get('aspects', []):
+            aspect_info = {
+                'name': aspect.get('localizedAspectName'),
+                'type': aspect.get('aspectConstraint', {}).get('aspectMode'),
+                'values': [value.get('localizedValue') for value in aspect.get('aspectValues', [])]
+            }
+            requied_aspects.append(aspect_info)
+            
+        return requied_aspects
+
     @staticmethod
     def load_credentials(env='production', config_file='config/ebay_credentials.xml'):
         tree = ET.parse(config_file)
         root = tree.getroot()
-        
-        # environment = root.find(env)
-        # creds = {
-        #     'client_id': environment.find('client_id').text,
-        #     'client_secret': environment.find('client_secret').text,
-        #     'dev_id': environment.find('dev_id').text,
-        #     'ru_name': environment.find('ru_name').text
-        # }
+    
         # Load credentials from secrets manager for production/sandbox
         creds = {
                 'client_id': st.secrets[f'{env}-credentials']['client_id'],
