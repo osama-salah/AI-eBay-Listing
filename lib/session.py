@@ -4,10 +4,6 @@ import os
 
 def save_session_state():
     with open('session_state.pkl', 'wb') as f:
-        # # Dump session state except for 'navigation_radio' key
-        # state_to_save = {key: value for key, value in st.session_state.items() if key != 'navigation_radio'}
-        # pickle.dump(state_to_save, f)
-
         # Dump session state to a file
         pickle.dump(dict(st.session_state), f)
 

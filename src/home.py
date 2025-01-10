@@ -19,12 +19,14 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from lib.session import save_session_state, load_session_state, logout
 
-import io
-# Capture the output of print statements
-output = io.StringIO()
-sys.stdout = output
-
 SANDBOX_ENABLE = True
+VISUAL_DEBUG_MODE = False
+
+if VISUAL_DEBUG_MODE:
+    import io
+    # Capture the output of print statements
+    output = io.StringIO()
+    sys.stdout = output
 
 # Check if navigation_radio is set in session state
 refresh_navigation_radio = st.session_state.navigation_radio if 'navigation_radio' in st.session_state else None
@@ -127,9 +129,6 @@ def authorize_client(env='production'):
                 st.rerun()
             else:
                 print(f"{env}: Authorization failed")
-        else:
-            st.info(f"{env}: Waiting for authorization...")
-            st.session_state['auth_state'] = 'auth_waiting'
 
 # Initialize eBay Production client if not already initialized
 if 'ebay_production' not in st.session_state:
@@ -195,6 +194,9 @@ with st.sidebar:
         index=["Home", "Listing Creator"].index(st.session_state.get('last_page', 'Home'))
     )
 
+    # Update the last page state
+    st.session_state.last_page = selected_page
+
 if st.session_state.navigation_radio == "Home":
     print("Displaying Home page")
     st.write("## Welcome to eBay Listing Creator!")
@@ -210,5 +212,6 @@ save_session_state()
 # Reset sys.stdout to its default
 sys.stdout = sys.__stdout__
 
-# Display the captured output in the Streamlit app
-st.text(output.getvalue())
+if VISUAL_DEBUG_MODE:
+    # Display the captured output in the Streamlit app
+    st.text(output.getvalue())
