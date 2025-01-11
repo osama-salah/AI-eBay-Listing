@@ -225,7 +225,7 @@ class EbayAPI:
 
         category_tree_id = self.get_category_tree_id(marketplace_id=marketplace_id)
 
-        endpoint = f"{self.endpoints[self.env]['api']}commerce/taxonomy/v1/category_tree/{category_tree_id}/get_item_aspects_for_category"         
+        endpoint = f"{self.endpoints[self.env]['api']}/commerce/taxonomy/v1/category_tree/{category_tree_id}/get_item_aspects_for_category"         
             
         headers = {
             "Authorization": f"Bearer {self.app_token['access_token']}",
@@ -258,7 +258,7 @@ class EbayAPI:
         return requied_aspects
 
     @staticmethod
-    def load_credentials(config_file='config/ebay_credentials.xml', env='production'):
+    def load_credentials(env, config_file='config/ebay_credentials.xml'):
         tree = ET.parse(config_file)
         root = tree.getroot()
     

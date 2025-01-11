@@ -77,7 +77,7 @@ if 'processing' not in st.session_state:
 def navigation_disabled():
     return st.session_state.processing
 
-def authorize_client(env='production'):
+def authorize_client():
     if not ebay_production.app_token:        
         print(f"Getting production application token...")
         ebay_production.get_app_token()
@@ -88,15 +88,16 @@ def authorize_client(env='production'):
             print("Failed to obtain production application token.")
             return
 
-    if not ebay_sandbox.app_token:
-        print(f"Getting sandbox application token...")
-        ebay_sandbox.get_app_token(env='sandbox')
+    if SANDBOX_ENABLE:
+        if not ebay_sandbox.app_token:
+            print(f"Getting sandbox application token...")
+            ebay_sandbox.get_app_token()
 
-        if ebay_sandbox.app_token.get('access_token'):
-            print("Sandbox application token obtained successfully.")
-        else:
-            print("Failed to obtain sandbox application token.")
-            return
+            if ebay_sandbox.app_token.get('access_token'):
+                print("Sandbox application token obtained successfully.")
+            else:
+                print("Failed to obtain sandbox application token.")
+                return
 
     if st.session_state.get('auth_state') == 'authorize':
         if env == 'production':
@@ -106,7 +107,7 @@ def authorize_client(env='production'):
             scopes = ["https://api.ebay.com/oauth/api_scope", "https://api.ebay.com/oauth/api_scope/buy.order.readonly", "https://api.ebay.com/oauth/api_scope/buy.guest.order", "https://api.ebay.com/oauth/api_scope/sell.marketing.readonly", "https://api.ebay.com/oauth/api_scope/sell.marketing", "https://api.ebay.com/oauth/api_scope/sell.inventory.readonly", "https://api.ebay.com/oauth/api_scope/sell.inventory", "https://api.ebay.com/oauth/api_scope/sell.account.readonly", "https://api.ebay.com/oauth/api_scope/sell.account", "https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly", "https://api.ebay.com/oauth/api_scope/sell.fulfillment", "https://api.ebay.com/oauth/api_scope/sell.analytics.readonly", "https://api.ebay.com/oauth/api_scope/sell.marketplace.insights.readonly", "https://api.ebay.com/oauth/api_scope/commerce.catalog.readonly", "https://api.ebay.com/oauth/api_scope/buy.shopping.cart", "https://api.ebay.com/oauth/api_scope/buy.offer.auction", "https://api.ebay.com/oauth/api_scope/commerce.identity.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.email.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.phone.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.address.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.name.readonly", "https://api.ebay.com/oauth/api_scope/commerce.identity.status.readonly", "https://api.ebay.com/oauth/api_scope/sell.finances", "https://api.ebay.com/oauth/api_scope/sell.payment.dispute", "https://api.ebay.com/oauth/api_scope/sell.item.draft", "https://api.ebay.com/oauth/api_scope/sell.item", "https://api.ebay.com/oauth/api_scope/sell.reputation", "https://api.ebay.com/oauth/api_scope/sell.reputation.readonly", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription", "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly", "https://api.ebay.com/oauth/api_scope/sell.stores", "https://api.ebay.com/oauth/api_scope/sell.stores.readonly"]     
 
         print(f"Getting {env} authorization URL...")
-        auth_url = st.session_state.ebay_client.get_auth_url(scopes, env=env)
+        auth_url = st.session_state.ebay_client.get_auth_url(scopes)
         # Open auth URL
         print('Opening auth URL')
         
@@ -118,7 +119,7 @@ def authorize_client(env='production'):
     if st.session_state.get('auth_state') != 'authorized':      
         if st.session_state.callback_auth_code:
             print('Getting user token...')
-            st.session_state.ebay_client.get_user_token(st.session_state.callback_auth_code, env=env)
+            st.session_state.ebay_client.get_user_token(st.session_state.callback_auth_code)
             
             if st.session_state.ebay_client.user_token['access_token']:
                 print(f"{env}: Authorization successful")
@@ -135,7 +136,7 @@ if 'ebay_production' not in st.session_state:
     print('Initializing Production client...')
     
     creds = EbayAPI.load_credentials(env='production')
-    ebay_production = EbayAPI(**creds)
+    ebay_production = EbayAPI(**creds, env='production')
 
     st.session_state.ebay_production = ebay_production
     st.session_state.callback_auth_code = None
@@ -145,7 +146,7 @@ if 'ebay_sandbox' not in st.session_state:
     print('Initializing Sandbox client...')
 
     creds = EbayAPI.load_credentials(env='sandbox')
-    ebay_sandbox = EbayAPI(**creds)
+    ebay_sandbox = EbayAPI(**creds, env='sandbox')
 
     st.session_state.ebay_sandbox = ebay_sandbox
     st.session_state.callback_auth_code = None
@@ -182,7 +183,7 @@ if st.session_state.get('auth_state') == 'authorize' or st.session_state.get('au
     print("Starting/resuming client authorization flow")
     
     env = 'sandbox' if SANDBOX_ENABLE else 'production'
-    authorize_client(env)
+    authorize_client()
 
 with st.sidebar:
     print(f'navigation_radio 1: {st.session_state.get("navigation_radio", "Home")}')

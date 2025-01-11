@@ -2,6 +2,7 @@ import json
 import requests
 import streamlit as st
 from itertools import product
+from json.decoder import JSONDecodeError
 
 import sys
 import os
@@ -38,37 +39,65 @@ def create_listing_form():
     col1, col2 = st.columns(2)
     
     with col1:
-        title = st.text_input("Product Title", value=st.session_state.get('title') or '' ,placeholder="e.g. iPhone 15 Pro Max 256GB")
+        title = st.text_input("Product Title", value=st.session_state.get('title') or '', placeholder="e.g. iPhone 15 Pro Max 256GB")
         manufacturer = st.text_input("Manufacturer", value=st.session_state.get('manufacturer') or '',placeholder="e.g. Apple")
         st.session_state.title = title
         st.session_state.manufacturer = manufacturer
         
     with col2:
-        summary = st.text_area("Summary", key="summary", height=150)
+        summary = st.text_area("Summary", value=st.session_state.get('summary') or '', height=150)
+        st.session_state.summary = summary
     
-    
-    # Display suggestions button
-    if st.button("Get Suggestions"):
-        if st.session_state.title and st.session_state.manufacturer:
-            print(f'title: {title}, manufacturer: {manufacturer}')
-            display_suggestions()
-        else:
-            st.error("Please fill in required fields: Title and Manufacturer")
-    elif 'categories' in st.session_state:
-        display_suggestions(st.session_state.categories)
+    col1, col2 = st.columns(2)
+    with col1:
+        # Display category suggestions button
+        if st.button("Suggest a category"):
+            if st.session_state.title and st.session_state.manufacturer:
+                display_suggestions()
+            else:
+                st.error("Please fill in required fields: Title, Manufacturer, and Summary.")
+        elif 'categories' in st.session_state:
+            display_suggestions(st.session_state.categories)
 
+    with col2:
+        # Generate listing button
+        if st.button("Generate Listing", type="primary"):
+            if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
+                try:
+                    listing = compose_listing(st.session_state.title, st.session_state.manufacturer, st.session_state.summary)
+                    st.session_state.gen_title = listing.get('title')
+                    st.session_state.gen_description = listing.get('description')
+                    save_session_state()
+                    st.rerun()
+                except JSONDecodeError as e:
+                    print(f"Error decoding JSON: {e}")
+            else:
+                st.error("Please fill in required fields: Title and Manufacturer")
+            
+    selected_category = st.selectbox(
+        "Suggested Categories",
+        disabled=st.session_state.get('categories') is None,
+        options=st.session_state.get('categories') or [],
+        format_func=lambda x: f"{x[0]} > {x[2]}",
+        index=st.session_state.categories.index(st.session_state.selected_category) if st.session_state.get('selected_category') else 0
+    )
+    # Save the selected category in session state
+    st.session_state.selected_category = selected_category
+    
     # Product information form
     with st.container():
         st.subheader("Suggested Listing")
         
+        gen_title = st.text_input("Title", value=st.session_state.get('gen_title') or '')
+        gen_description = st.text_area("Description", height=150, value=st.session_state.get('gen_description') or '')
+
+        st.subheader("Manual Entries")
+
         col1, col2 = st.columns(2)
         
         with col1:
             sku = st.text_input("SKU", key="sku")
-
-            title_val = st.session_state.get('gen_title') if st.session_state.get('gen_title') else ""
-            gen_title = st.text_input("Title", key="gen_title", value=title_val)
-
+            
             price = st.number_input("Price", min_value=0.0, step=0.01, key="price")            
             weight = st.number_input("Weight", min_value=0.0, step=0.1, key="weight")
 
@@ -87,20 +116,20 @@ def create_listing_form():
             return_policy = st.text_input("Return Policy", key="return_policy")                                    
             payment_policy = st.text_input("Payment Policy", key="payment_policy")            
 
-        description_val = st.session_state.get('gen_description') if st.session_state.get('gen_description') else ""
-        gen_description = st.text_area("Description", key="gen_description", height=150, value=description_val)
-
         # Dynamic Aspects Section
         if st.session_state.get('selected_category'):
             category_id = st.session_state.selected_category[1]
             aspects = st.session_state.ebay_client.get_category_aspects(category_id)
             
             st.subheader("Category Aspects")
+
+            selected_aspects = {}
             for aspect in aspects:
-                if aspect['type'] == 'SELECTION_ONLY':
-                    st.selectbox(aspect['name'], options=aspect['values'], key=f"aspect_{aspect['name']}")
-                else:
-                    st.text_input(aspect['name'], key=f"aspect_{aspect['name']}")
+                selected_aspects[aspect['name']] = st.selectbox(aspect['name'], options=aspect['values'], 
+                index = aspect['values'].index(st.session_state.get('selected_aspects', {}).get(aspect['name'], aspect['values'][0])) if st.session_state.get('selected_aspects', {}).get(aspect['name']) in aspect['values'] else 0)
+                
+            # Save the selected aspect in session state
+            st.session_state.selected_aspects = selected_aspects
 
     # Media Section
     # Initialize images list in session state if not present
@@ -139,15 +168,6 @@ def create_listing_form():
     video_file = st.file_uploader("Product Video", type=['mp4', 'mov', 'avi'])
     if video_file:
         st.video(video_file)    
-    
-    # Generate listing button
-    if st.button("Generate Listing", type="primary"):
-        if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
-            listing = compose_listing(title, manufacturer, summary)
-            st.session_state.gen_title = listing.get('title')
-            st.session_state.gen_description = listing.get('description')
-        else:
-            st.error("Please fill in required fields: Title and Manufacturer")
 
     # Create listing button
     if st.button("Create Listing", type="primary"):
@@ -188,17 +208,5 @@ def display_suggestions(categories=None):
             st.session_state.categories = categories
 
             # Clear the previous selected category
-            st.session_state.selected_category = None                    
-
-    selected_category = st.selectbox(
-        "Suggested Categories",
-        options=categories,
-        format_func=lambda x: f"{x[0]} > {x[2]}",
-        index=st.session_state.categories.index(st.session_state.selected_category) if st.session_state.get('selected_category') else 0
-    )
-
-    print(f"Selected Category: {selected_category}")
-
-    # Save the selected category in session state
-    st.session_state.selected_category = selected_category
+            st.session_state.selected_category = None
 
