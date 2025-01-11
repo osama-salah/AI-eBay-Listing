@@ -10,6 +10,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from lib.session import load_session_state, save_session_state
+from lib.ai import compose_listing
 
 # Initialize session state variables
 rerun_flag = False
@@ -43,10 +44,8 @@ def create_listing_form():
         st.session_state.manufacturer = manufacturer
         
     with col2:
-        if image_url := st.text_input("Image URL", value=st.session_state.get('image_url') or '',placeholder="e.g. https://example.com/image.jpg"):
-            st.image(image_url, caption="Product Image Preview", width=300)
-            st.session_state.image_url = uploaded_image.getvalue()
-
+        summary = st.text_area("Summary", key="summary", height=150)
+    
     
     # Display suggestions button
     if st.button("Get Suggestions"):
@@ -66,7 +65,10 @@ def create_listing_form():
         
         with col1:
             sku = st.text_input("SKU", key="sku")
-            title = st.text_input("Title", key="title")
+
+            title_val = st.session_state.get('gen_title') if st.session_state.get('gen_title') else ""
+            gen_title = st.text_input("Title", key="gen_title", value=title_val)
+
             price = st.number_input("Price", min_value=0.0, step=0.01, key="price")            
             weight = st.number_input("Weight", min_value=0.0, step=0.1, key="weight")
 
@@ -85,12 +87,13 @@ def create_listing_form():
             return_policy = st.text_input("Return Policy", key="return_policy")                                    
             payment_policy = st.text_input("Payment Policy", key="payment_policy")            
 
-        description = st.text_area("Description", key="description", height=150)
+        description_val = st.session_state.get('gen_description') if st.session_state.get('gen_description') else ""
+        gen_description = st.text_area("Description", key="gen_description", height=150, value=description_val)
 
         # Dynamic Aspects Section
         if st.session_state.get('selected_category'):
-            category_id = st.session_state.selected_category[1]  # Assuming category ID is stored here
-            aspects = st.session_state.ebay_production.get_category_aspects(category_id)
+            category_id = st.session_state.selected_category[1]
+            aspects = st.session_state.ebay_client.get_category_aspects(category_id)
             
             st.subheader("Category Aspects")
             for aspect in aspects:
@@ -137,9 +140,18 @@ def create_listing_form():
     if video_file:
         st.video(video_file)    
     
+    # Generate listing button
+    if st.button("Generate Listing", type="primary"):
+        if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
+            listing = compose_listing(title, manufacturer, summary)
+            st.session_state.gen_title = listing.get('title')
+            st.session_state.gen_description = listing.get('description')
+        else:
+            st.error("Please fill in required fields: Title and Manufacturer")
+
     # Create listing button
     if st.button("Create Listing", type="primary"):
-        if st.session_state.title and st.session_state.manufacturer:
+        if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
             # Here you would integrate with eBay's Inventory API
             listing_data = {
                 "title": title,
@@ -151,14 +163,14 @@ def create_listing_form():
             st.json(listing_data)
             save_session_state()
         else:
-            st.error("Please fill in required fields: Title and Manufacturer")
+            st.error("Please fill in required fields: Title and Manufacturer")    
     
 def display_suggestions(categories=None):
     if not categories:
         search_query = f"{st.session_state.title} {st.session_state.manufacturer}".strip()
         # Verify ebay_production has a valid user token
         if not st.session_state.ebay_production.app_token:
-            st.error("User token is not available. Please log in.")
+            st.error("App token is not available. Please log in.")
             return
 
         try:
@@ -169,19 +181,19 @@ def display_suggestions(categories=None):
         
         if 'categorySuggestions' in suggestions:
             categories = [(suggestion['categoryTreeNodeAncestors'][0]['categoryName'],
-            suggestion['categoryTreeNodeAncestors'][0]['categoryName'],
+            suggestion['category']['categoryId'],
             suggestion['category']['categoryName']) for suggestion in suggestions['categorySuggestions']]
 
             # Save the categories in session state
             st.session_state.categories = categories
 
             # Clear the previous selected category
-            st.session_state.selected_category = None
-                        
+            st.session_state.selected_category = None                    
+
     selected_category = st.selectbox(
         "Suggested Categories",
         options=categories,
-        format_func=lambda x: f"{x[1]} > {x[2]}",
+        format_func=lambda x: f"{x[0]} > {x[2]}",
         index=st.session_state.categories.index(st.session_state.selected_category) if st.session_state.get('selected_category') else 0
     )
 

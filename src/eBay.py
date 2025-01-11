@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlencode, unquote
 
 class EbayAPI:
-    def __init__(self, client_id, client_secret, dev_id, ru_name):
+    def __init__(self, client_id, client_secret, dev_id, ru_name, env):
         """
         Initialize eBay OAuth authentication utility
         
@@ -23,6 +23,7 @@ class EbayAPI:
         self.ru_name = ru_name
         self.user_token = None
         self.app_token = None
+        self.env = env
         
         # eBay OAuth endpoints
         self.endpoints = {
@@ -36,17 +37,15 @@ class EbayAPI:
             }
         }
 
-    def get_app_token(self, env='production'):
+    def get_app_token(self):
         """
         Get application OAuth token using client credentials grant
-        
-        Args:
-            env (str): Environment - 'production' or 'sandbox'
             
         Returns:
             dict: Response containing access token and expiration
         """
-        endpoint = f"{self.endpoints[env]['api']}/identity/v1/oauth2/token"
+
+        endpoint = f"{self.endpoints[self.env]['api']}/identity/v1/oauth2/token"
         print(f'endpoint: {endpoint}')
         
         # Encode credentials
@@ -72,18 +71,17 @@ class EbayAPI:
             print(f"Error getting app token from: {response.json()}")
             return None
 
-    def get_auth_url(self, scopes, env='production'):
+    def get_auth_url(self, scopes):
         """
         Get authorization URL for user consent
         
         Args:
             scopes (list): List of eBay API scopes to request
-            env (str): Environment - 'production' or 'sandbox'
             
         Returns:
             str: Authorization URL
         """
-        endpoint = f"{self.endpoints[env]['auth']}/oauth2/authorize"
+        endpoint = f"{self.endpoints[self.env]['auth']}/oauth2/authorize"
         
         params = {
             'client_id': self.client_id,
@@ -94,18 +92,17 @@ class EbayAPI:
         
         return f"{endpoint}?{urlencode(params)}"
 
-    def get_user_token(self, auth_code, env='production'):
+    def get_user_token(self, auth_code):
         """
         Get user OAuth token using authorization code
         
         Args:
             auth_code (str): Authorization code from callback URL
-            env (str): Environment - 'production' or 'sandbox'
             
         Returns:
             dict: Response containing access token, refresh token and expiration
         """
-        endpoint = f"{self.endpoints[env]['api']}/identity/v1/oauth2/token"
+        endpoint = f"{self.endpoints[self.env]['api']}/identity/v1/oauth2/token"
         
         # Encode credentials
         credentials = base64.b64encode(
@@ -126,18 +123,17 @@ class EbayAPI:
         
         return self.user_token
 
-    def refresh_user_token(self, refresh_token, env='production'):
+    def refresh_user_token(self, refresh_token):
         """
         Refresh user OAuth token using refresh token
         
         Args:
             refresh_token (str): Refresh token from previous auth
-            env (str): Environment - 'production' or 'sandbox'
             
         Returns:
             dict: Response containing new access token and expiration
         """
-        endpoint = f"{self.endpoints[env]['api']}/identity/v1/oauth2/token"
+        endpoint = f"{self.endpoints[self.env]['api']}/identity/v1/oauth2/token"
         
         # Encode credentials
         credentials = base64.b64encode(
@@ -184,6 +180,34 @@ class EbayAPI:
         response = requests.get(endpoint, headers=headers, params=params)
         return response.json()
 
+    def get_category_tree_id(self, marketplace_id='EBAY_US'):
+        """
+        Get category ID of a marketplace
+        
+        Args:
+            marketplace_id (str): Target marketplace ID
+            
+        Returns:
+            str: The ID of the target marketplace
+        """
+
+        if not self.app_token:
+            raise ValueError("App token is required.") 
+
+        endpoint = f"{self.endpoints[self.env]['api']}/commerce/taxonomy/v1/get_default_category_tree_id"           
+        
+        headers = {
+            "Authorization": f"Bearer {self.app_token['access_token']}",
+            "Accept": "application/json",
+        }
+        
+        params = {
+            "marketplace_id": marketplace_id
+        }
+        
+        response = requests.get(endpoint, headers=headers, params=params)
+        return response.json()['categoryTreeId']
+
     def get_category_aspects(self, category_id, marketplace_id="EBAY_US"):
         """
         Get required aspects for a specific category
@@ -195,26 +219,27 @@ class EbayAPI:
         Returns:
             list: List of dictionaries containing aspect details (name, type, values)
         """
-        endpoint = f"https://api.ebay.com/commerce/catalog/v1_beta/get_item_aspects_for_category"
-        
+
         if not self.app_token:
             raise ValueError("App token is required.")
+
+        category_tree_id = self.get_category_tree_id(marketplace_id=marketplace_id)
+
+        endpoint = f"{self.endpoints[self.env]['api']}commerce/taxonomy/v1/category_tree/{category_tree_id}/get_item_aspects_for_category"         
             
         headers = {
             "Authorization": f"Bearer {self.app_token['access_token']}",
-            "Content-Type": "application/json",
-            "X-EBAY-C-MARKETPLACE-ID": marketplace_id
+            "Content-Type": "application/json"
         }
         
         params = {
-            "category_id": category_id,
-            "aspect_metadata": "true"
+            "category_id": category_id
         }
         
         response = requests.get(endpoint, headers=headers, params=params)
         
         if response.status_code != 200:
-            raise Exception(f"Failed to get aspects: {response.text}")
+            raise Exception(f"Failed to get aspects: {response.status_code}: {response.text}")
             
         aspects_data = response.json()
         
@@ -224,15 +249,16 @@ class EbayAPI:
         for aspect in aspects_data.get('aspects', []):
             aspect_info = {
                 'name': aspect.get('localizedAspectName'),
-                'type': aspect.get('aspectConstraint', {}).get('aspectMode'),
+                'data_type': aspect.get('aspectConstraint').get('aspectDataType'),
                 'values': [value.get('localizedValue') for value in aspect.get('aspectValues', [])]
             }
-            requied_aspects.append(aspect_info)
+            if aspect.get('aspectConstraint').get('aspectRequired'):
+                requied_aspects.append(aspect_info)
             
         return requied_aspects
 
     @staticmethod
-    def load_credentials(env='production', config_file='config/ebay_credentials.xml'):
+    def load_credentials(config_file='config/ebay_credentials.xml', env='production'):
         tree = ET.parse(config_file)
         root = tree.getroot()
     
@@ -250,15 +276,15 @@ if __name__ == "__main__":
     # Initialize sandbox environment
     print('Initializing sandbox environment...')
     sandbox_creds = EbayAPI.load_credentials(env='sandbox')
-    ebay_sandbox = EbayAPI(**sandbox_creds)
+    ebay_sandbox = EbayAPI(**sandbox_creds, env='sandbox')
 
     # Get application token (sandbox)
     print("Getting sandbox application token...")
-    app_token_sandbox = ebay_sandbox.get_app_token(env='sandbox')
+    app_token_sandbox = ebay_sandbox.get_app_token()
 
     # Initialize production environment 
-    production_creds = EbayAPI.load_credentials('production')
-    ebay_production = EbayAPI(**production_creds)
+    production_creds = EbayAPI.load_credentials(env='production')
+    ebay_production = EbayAPI(**production_creds, env='production')
 
     # Get application token (production)
     ebay_production.get_app_token()
@@ -268,13 +294,13 @@ if __name__ == "__main__":
 
     # Get sandbox authorization URL for user consent
     print("Getting sandbox authorization URL...")
-    auth_url = ebay_sandbox.get_auth_url(scopes_sandbox, env='sandbox')
+    auth_url = ebay_sandbox.get_auth_url(scopes_sandbox)
     # Automatically open the URL in the default browser
     webbrowser.open(auth_url)
     
     # After sandbox user authorizes and you get the code from callback URL
     auth_code = unquote(input("Enter the code from the redirect URL: "))
-    sandbox_user_token = ebay_sandbox.get_user_token(auth_code, env='sandbox')
+    sandbox_user_token = ebay_sandbox.get_user_token(auth_code)
     print("Successfully retrieved sandbox user token." if 'access_token' in sandbox_user_token else "Failed to retrieve sandbox user token.")
 
     # Get production authorization URL for user consent

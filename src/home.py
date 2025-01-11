@@ -33,7 +33,7 @@ refresh_navigation_radio = st.session_state.navigation_radio if 'navigation_radi
 # Load state (without navigation_radio)
 print("Loading session state")
 load_session_state()
-# Add after loading session state
+
 if "code" in st.query_params:
     st.session_state.callback_auth_code = st.query_params["code"]
     print('Received callback auth code')
