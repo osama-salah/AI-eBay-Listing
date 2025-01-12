@@ -29,11 +29,13 @@ class EbayAPI:
         self.endpoints = {
             'production': {
                 'api': 'https://api.ebay.com',
-                'auth': 'https://auth.ebay.com'
+                'auth': 'https://auth.ebay.com',
+                'identity': 'https://apiz.ebay.com'
             },
             'sandbox': {
                 'api': 'https://api.sandbox.ebay.com',
-                'auth': 'https://auth.sandbox.ebay.com'
+                'auth': 'https://auth.sandbox.ebay.com',
+                'identity': 'https://apiz.sandbox.ebay.com'
             }
         }
 
@@ -123,38 +125,90 @@ class EbayAPI:
         
         return self.user_token
 
-    def refresh_user_token(self, refresh_token):
+    def refresh_token(self):
         """
-        Refresh user OAuth token using refresh token
-        
-        Args:
-            refresh_token (str): Refresh token from previous auth
-            
+        Refresh an OAuth token using refresh token
+
         Returns:
             dict: Response containing new access token and expiration
         """
         endpoint = f"{self.endpoints[self.env]['api']}/identity/v1/oauth2/token"
-        
+
         # Encode credentials
         credentials = base64.b64encode(
             f"{self.client_id}:{self.client_secret}".encode()).decode()
-        
+
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': f'Basic {credentials}'
         }
-        
+
         data = {
             'grant_type': 'refresh_token',
-            'refresh_token': refresh_token,
-            'scope': 'https://api.ebay.com/oauth/api_scope'
+            'refresh_token': self.user_token['refresh_token']
         }
 
-        self.user_token = requests.post(endpoint, headers=headers, data=data).json()
-        
         response = requests.post(endpoint, headers=headers, data=data)
-        return response.json()  
+
+        try:
+            self.user_token = response.json()
+            
+        except KeyError as e:
+            print(f"Error getting app token from: {response.json()}")
+
+    def is_app_token_valid(self) -> bool:
+        """
+        Validates an eBay app OAuth token by making a test API call
         
+        Args:
+            env (str): sandbox or production
+            
+        Returns:
+            bool: True if token is valid, False otherwise
+        """
+
+        if not self.app_token:
+            raise ValueError("App token is required.") 
+
+        endpoint = f"{self.endpoints[self.env]['api']}/commerce/taxonomy/v1/get_default_category_tree_id"           
+        
+        headers = {
+            "Authorization": f"Bearer {self.app_token['access_token']}",
+            "Accept": "application/json",
+        }
+        
+        params = {
+            "marketplace_id": "EBAY_US"
+        }
+        
+        response = requests.get(endpoint, headers=headers, params=params)
+
+        return response.status_code == 200
+        
+    def is_user_token_valid(self) -> bool:
+        """
+        Validates an eBay user OAuth token by making a test API call
+        
+        Args:
+            env (str): sandbox or production
+            
+        Returns:
+            bool: True if token is valid, False otherwise
+        """
+
+        if not self.app_token:
+            raise ValueError("App token is required.") 
+
+        endpoint = f"{self.endpoints[self.env]['api']}/commerce/identity/v1/user/"
+        
+        headers = {
+            "Authorization": f"Bearer {self.user_token['access_token']}"
+        }
+        
+        response = requests.get(endpoint, headers=headers)
+
+        return response.status_code == 200
+
     def get_category_suggestions(self, query, marketplace_id="EBAY_US"):
         """
         Get category suggestions for a given query

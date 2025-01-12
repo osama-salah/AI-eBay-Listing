@@ -159,21 +159,49 @@ st.session_state.ebay_client = ebay_sandbox if SANDBOX_ENABLE else ebay_producti
 
 header()
 
-# Check if user is logged in
+# Check if user is logged in and the app token and user token are valid
 if st.session_state.ebay_client.user_token and st.session_state.ebay_production.app_token:
-    print("User is logged in")
-    st.write(":green[Logged in]")
+    tokens_valid = True
+    # Check if app token is valid    
+    if not st.session_state.ebay_client.is_app_token_valid():        
+        print("App token is invalid. Refreshing token...")
+        # Try getting a new app token
+        if not st.session_state.ebay_client.get_app_token():
+            tokens_valid = False
+            print(f"Error getting a new token: {e}")
+
+    # Check if user token is valid
+    if not st.session_state.ebay_client.is_user_token_valid():
+        print("User token is invalid. Getting a new token...")
+        # Try refreshing user token
+        try:
+            st.session_state.ebay_client.refresh_token()            
+        except KeyError as e:
+            tokens_valid = False
+            print(f"Error refreshing token: {e}")            
     
-    if st.button("Logout"):
-        print("User logged out")
-        logout()
+    # Check production app token if in DEBUG mode
+    if SANDBOX_ENABLE:
+        if not st.session_state.ebay_production.is_app_token_valid():
+            print("Production app token is invalid. Getting a new token...")
+            # Try getting a new production app token
+            if not st.session_state.ebay_production.get_app_token():
+                tokens_valid = False
+                print(f"Error getting a new token: {e}")
+
+    # Check if a token was refreshed
+    if tokens_valid:
+        print("User is logged in")
+        st.write(":green[Logged in]")
+        
+        if st.button("Logout"):
+            print("User logged out")
+            logout()
 else:
     print("User not logged in")
     st.write(":red[Please log in to access the application.]")
     # Display login button
     if st.button("Login"):
-        # Clear any log in session state
-        # logout()
         st.session_state.auth_state = 'authorize'
         
         print('Logging in...')        
