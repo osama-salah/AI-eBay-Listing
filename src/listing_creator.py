@@ -30,9 +30,6 @@ def create_listing_form():
         </style>
         """, unsafe_allow_html=True)
 
-
-    global IMAGE_COUNT
-
     st.markdown('<h2 style="text-align: center;">Create eBay Listing</h2>', unsafe_allow_html=True)
     
     # Product basic information
@@ -51,7 +48,7 @@ def create_listing_form():
     col1, col2 = st.columns(2)
     with col1:
         # Display category suggestions button
-        if st.button("Suggest a category"):
+        if st.button("Suggest a category", disabled=not st.session_state.auth_state == 'authorized'):
             if st.session_state.title and st.session_state.manufacturer:
                 display_suggestions()
             else:
@@ -61,7 +58,7 @@ def create_listing_form():
 
     with col2:
         # Generate listing button
-        if st.button("Generate Listing", type="primary"):
+        if st.button("Generate Listing", type="primary", disabled=not st.session_state.auth_state == 'authorized'):
             if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
                 try:
                     listing = compose_listing(st.session_state.title, st.session_state.manufacturer, st.session_state.summary)
@@ -70,13 +67,13 @@ def create_listing_form():
                     save_session_state()
                     st.rerun()
                 except JSONDecodeError as e:
-                    print(f"Error decoding JSON: {e}")
+                    st.error(f"Error with GenAI. Please try again.")
             else:
                 st.error("Please fill in required fields: Title and Manufacturer")
             
     selected_category = st.selectbox(
         "Suggested Categories",
-        disabled=st.session_state.get('categories') is None,
+        disabled=st.session_state.get('categories') is None or not st.session_state.auth_state == 'authorized',
         options=st.session_state.get('categories') or [],
         format_func=lambda x: f"{x[0]} > {x[2]}",
         index=st.session_state.categories.index(st.session_state.selected_category) if st.session_state.get('selected_category') else 0
@@ -89,7 +86,10 @@ def create_listing_form():
         st.subheader("Suggested Listing")
         
         gen_title = st.text_input("Title", value=st.session_state.get('gen_title') or '')
-        gen_description = st.text_area("Description", height=150, value=st.session_state.get('gen_description') or '')
+        gen_description = st.text_area(
+            "Description", height=150, 
+            value=st.session_state.get('gen_description') or ''
+            )
 
         st.subheader("Manual Entries")
 
@@ -117,7 +117,7 @@ def create_listing_form():
             payment_policy = st.text_input("Payment Policy", key="payment_policy")            
 
         # Dynamic Aspects Section
-        if st.session_state.get('selected_category'):
+        if st.session_state.get('selected_category') and st.session_state.auth_state == 'authorized':
             category_id = st.session_state.selected_category[1]
             aspects = st.session_state.ebay_client.get_category_aspects(category_id)
             
@@ -170,7 +170,7 @@ def create_listing_form():
         st.video(video_file)    
 
     # Create listing button
-    if st.button("Create Listing", type="primary"):
+    if st.button("Create Listing", type="primary", disabled=not st.session_state.auth_state == 'authorized'):
         if st.session_state.title and st.session_state.manufacturer and st.session_state.summary:
             # Here you would integrate with eBay's Inventory API
             listing_data = {

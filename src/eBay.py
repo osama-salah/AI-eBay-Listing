@@ -4,8 +4,12 @@ import xml.etree.ElementTree as ET
 import base64
 import requests
 import webbrowser
+import time
 import xml.etree.ElementTree as ET
 from urllib.parse import urlencode, unquote
+
+# Invalidate a token if it is about to expire
+TOKEN_TIMEOUT_MARGIN = 300
 
 class EbayAPI:
     def __init__(self, client_id, client_secret, dev_id, ru_name, env):
@@ -68,7 +72,12 @@ class EbayAPI:
 
         try:
             self.app_token = response.json()
+
+            # Store expiration time in session state
+            st.session_state['app_token_expiration'] = self.app_token['expires_in'] + time.time()
+
             return self.app_token
+
         except KeyError as e:
             print(f"Error getting app token from: {response.json()}")
             return None
@@ -121,8 +130,16 @@ class EbayAPI:
             'redirect_uri': self.ru_name
         }
 
-        self.user_token = requests.post(endpoint, headers=headers, data=data).json()
+        try:
+            self.user_token = response.json()
+            self.user_token = requests.post(endpoint, headers=headers, data=data).json()
         
+            # Store expiration time in session state
+            st.session_state['user_token_expiration'] = self.user_token['expires_in'] + time.time()
+
+        except KeyError as e:
+            print(f"Error getting user token from: {response.json()}")
+            return
         return self.user_token
 
     def refresh_token(self):
@@ -152,9 +169,11 @@ class EbayAPI:
 
         try:
             self.user_token = response.json()
+            # Update expiration time in session state
+            st.session_state['user_token_expiration'] = self.user_token['expires_in'] + time.time()
             
         except KeyError as e:
-            print(f"Error getting app token from: {response.json()}")
+            print(f"Error refreshing user token from: {response.json()}")
 
     def is_app_token_valid(self) -> bool:
         """
@@ -196,10 +215,7 @@ class EbayAPI:
             bool: True if token is valid, False otherwise
         """
 
-        if not self.app_token:
-            raise ValueError("App token is required.") 
-
-        endpoint = f"{self.endpoints[self.env]['api']}/commerce/identity/v1/user/"
+        endpoint = f"{self.endpoints[self.env]['identity']}/commerce/identity/v1/user/"
         
         headers = {
             "Authorization": f"Bearer {self.user_token['access_token']}"
@@ -208,6 +224,12 @@ class EbayAPI:
         response = requests.get(endpoint, headers=headers)
 
         return response.status_code == 200
+
+    def is_app_token_expired(self):
+        return time.time() > st.session_state['app_token_expiration'] - TOKEN_TIMEOUT_MARGIN
+
+    def is_user_token_expired(self):
+        return time.time() > st.session_state['user_token_expiration'] - TOKEN_TIMEOUT_MARGIN
 
     def get_category_suggestions(self, query, marketplace_id="EBAY_US"):
         """
@@ -334,7 +356,7 @@ if __name__ == "__main__":
 
     # Get application token (sandbox)
     print("Getting sandbox application token...")
-    app_token_sandbox = ebay_sandbox.get_app_token()
+    ebay_sandbox.get_app_token()
 
     # Initialize production environment 
     production_creds = EbayAPI.load_credentials(env='production')
