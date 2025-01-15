@@ -79,7 +79,7 @@ class EbayAPI:
             return self.app_token
 
         except KeyError as e:
-            print(f"Error getting app token from: {response.json()}")
+            print("Error getting app token")
             return None
 
     def get_auth_url(self, scopes):
@@ -131,14 +131,13 @@ class EbayAPI:
         }
 
         try:
-            self.user_token = response.json()
             self.user_token = requests.post(endpoint, headers=headers, data=data).json()
         
             # Store expiration time in session state
             st.session_state['user_token_expiration'] = self.user_token['expires_in'] + time.time()
 
         except KeyError as e:
-            print(f"Error getting user token from: {response.json()}")
+            print("Error getting user token")
             return
         return self.user_token
 
@@ -173,7 +172,7 @@ class EbayAPI:
             st.session_state['user_token_expiration'] = self.user_token['expires_in'] + time.time()
             
         except KeyError as e:
-            print(f"Error refreshing user token from: {response.json()}")
+            print(f"Error refreshing user token")
 
     def is_app_token_valid(self) -> bool:
         """
@@ -222,6 +221,7 @@ class EbayAPI:
         }
         
         response = requests.get(endpoint, headers=headers)
+
 
         return response.status_code == 200
 

@@ -78,6 +78,7 @@ def create_listing_form():
         format_func=lambda x: f"{x[0]} > {x[2]}",
         index=st.session_state.categories.index(st.session_state.selected_category) if st.session_state.get('selected_category') else 0
     )
+
     # Save the selected category in session state
     st.session_state.selected_category = selected_category
     
@@ -96,25 +97,46 @@ def create_listing_form():
         col1, col2 = st.columns(2)
         
         with col1:
-            sku = st.text_input("SKU", key="sku")
+            sku = st.text_input("SKU", value=st.session_state.get('sku') or '')
+            st.session_state.sku = sku
             
-            price = st.number_input("Price", min_value=0.0, step=0.01, key="price")            
-            weight = st.number_input("Weight", min_value=0.0, step=0.1, key="weight")
+            price = st.number_input("Price", min_value=0.0, step=0.01, value=st.session_state.get('price') or 0.0)
+            st.session_state.price = price
+
+            weight = st.number_input("Weight", min_value=0.0, step=0.1, value=st.session_state.get('weight') or 0.0)
+            st.session_state.weight = weight
 
             condition_options = ["New with box", "New without box", "New with defects", "Pre-owned"]
-            condition = st.selectbox("Condition", options=condition_options, key="condition")
+            condition = st.selectbox(
+                "Condition",
+                 options=condition_options,
+                 index=condition_options.index(st.session_state.get('condition') or condition_options[0])
+                 )
+            st.session_state.condition = condition
 
-            quantity = st.number_input("Available Quantity", min_value=1, step=1, key="quantity")
+            quantity = st.number_input("Available Quantity", min_value=1, step=1, value=st.session_state.get('quantity') or 1)
+            st.session_state.quantity = quantity
             
         with col2:
             marketplace_options = ["EBAY_US", "EBAY_CA", "EBAY_GB", "EBAY_AU", "EBAY_DE", "EBAY_FR", "EBAY_IT", "EBAY_ES"]
-            marketplace = st.selectbox("eBay Marketplace", options=marketplace_options, key="marketplace")
+            marketplace = st.selectbox(
+                "eBay Marketplace", 
+            options=marketplace_options,
+            index=marketplace_options.index(st.session_state.get('marketplace') or marketplace_options[0])
+            )
+            st.session_state.marketplace = marketplace
 
-            merchant_location = st.text_input("Merchant Location", key="merchant_location") 
+            merchant_location = st.text_input("Merchant Location", value=st.session_state.get('merchant_location') or '')
+            st.session_state.merchant_location = merchant_location
 
-            fulfillment_policy = st.text_input("Fulfillment Policy", key="fulfillment_policy")
-            return_policy = st.text_input("Return Policy", key="return_policy")                                    
-            payment_policy = st.text_input("Payment Policy", key="payment_policy")            
+            fulfillment_policy = st.text_input("Fulfillment Policy", value=st.session_state.get('fulfillment_policy') or '')
+            st.session_state.fulfillment_policy = fulfillment_policy
+                        
+            return_policy = st.text_input("Return Policy", value=st.session_state.get('return_policy') or '')
+            st.session_state.return_policy = return_policy                                    
+            
+            payment_policy = st.text_input("Payment Policy", value=st.session_state.get('payment_policy') or '')
+            st.session_state.payment_policy = payment_policy
 
         # Dynamic Aspects Section
         if st.session_state.get('selected_category') and st.session_state.auth_state == 'authorized':
