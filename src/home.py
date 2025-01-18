@@ -187,15 +187,16 @@ if st.session_state.get('auth_state') == 'authorize' or st.session_state.get('au
 
 with st.sidebar:
     print(f'navigation_radio 1: {st.session_state.get("navigation_radio", "Home")}')
-    navigation_radio = st.radio(
+    selected_page = st.radio(
         "Navigation",
         ["Home", "Listing Creator"],
         disabled=navigation_disabled(),
+        key="navigation_radio",
         index=["Home", "Listing Creator"].index(st.session_state.get('last_page', 'Home'))
     )
 
     # Update the last page state
-    st.session_state.navigation_radio = navigation_radio
+    st.session_state.last_page = selected_page
 
 if st.session_state.navigation_radio == "Home":
     print("Displaying Home page")

@@ -5,8 +5,10 @@ import os
 def save_session_state():
     with open('session_state.pkl', 'wb') as f:
         # Dump session state to a file excluding all form submit buttons (e.g. suggest_category_btn)
-        state_to_save = {k: v for k, v in st.session_state.items() if not k.startswith('FormSubmitter')}
+        state_to_save = {k: v for k, v in st.session_state.items() if not k.startswith('FormSubmitter') and k != 'selected_category'}
         pickle.dump(state_to_save, f)
+        
+    print('Session state saved')
 
 
 def load_session_state():
